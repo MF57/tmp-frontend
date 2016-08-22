@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -7,34 +7,28 @@
 
     baseConfiguration.$inject = ['$stateProvider', '$urlRouterProvider'];
     function baseConfiguration($stateProvider, $urlRouterProvider) {
-        //
-        // For any unmatched url, redirect to /state1
         $urlRouterProvider.otherwise("/state1");
-        //
-        // Now set up the states
+
         $stateProvider
             .state('state1', {
                 url: "/state1",
-                templateUrl: "partials/state1.html"
-            })
-            .state('state1.list', {
-                url: "/list",
-                templateUrl: "partials/state1.list.html",
-                controller: function($scope) {
-                    $scope.items = ["A", "List", "Of", "Items"];
-                }
+                templateUrl: "partials/view1/view1.html",
+                controller: "View1Ctrl",
+                controllerAs: "ctrl1"
             })
             .state('state2', {
                 url: "/state2",
-                templateUrl: "partials/state2.html"
+                templateUrl: "partials/view2/view2.html",
+                controller: "View2Ctrl",
+                controllerAs: "ctrl2"
             })
-            .state('state2.list', {
-                url: "/list",
-                templateUrl: "partials/state2.list.html",
-                controller: function($scope) {
-                    $scope.things = ["A", "Set", "Of", "Things"];
-                }
-            });
+            .state('state3', {
+                url: "/state3",
+                templateUrl: "partials/view3/view3.html",
+                controller: "View3Ctrl",
+                controllerAs: "ctrl3"
+            })
+
     }
 
 })();

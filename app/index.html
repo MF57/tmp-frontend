@@ -27,14 +27,10 @@
         <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-
+  <a ui-sref="state1">TMP-Enrollment</a>
+  <a ui-sref="state2">TMP-Core</a>
+  <a ui-sref="state3">TMP-Stats</a>
   <div ui-view></div>
-  <!-- We'll also add some navigation: -->
-  <a ui-sref="state1">State 1</a>
-  <a ui-sref="state2">State 2</a>
-
-
-
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -53,7 +49,8 @@
 
   <!--APPLICATION JS-->
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="partials/view1/view1.js"></script>
+  <script src="partials/view2/view2.js"></script>
+  <script src="partials/view3/view3.js"></script>
 </body>
 </html>
