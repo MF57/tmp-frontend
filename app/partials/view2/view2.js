@@ -9,7 +9,7 @@
         var vm = this;
         vm.message = "";
 
-        $http.get("http://localhost:8092/api/tests").success(function (response) {
+        $http.get("http://tmp-core.tegess.com:8092/api/tests").success(function (response) {
             vm.message = response;
         }).error(function () {
             vm.message = "Could not connect to TMP-Core"
