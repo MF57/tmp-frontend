@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('View2Ctrl', View2Controller);
 
-    View2Controller.$inject = ['$http', 'urls'];
-    function View2Controller($http, urls) {
+    View2Controller.$inject = ['$http', '$scope', 'urls'];
+    function View2Controller($http, $scope, urls) {
         var vm = this;
         vm.message = "";
 

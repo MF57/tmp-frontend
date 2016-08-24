@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('View3Ctrl', View3Controller);
 
-    View3Controller.$inject = ['$http', 'urls'];
-    function View3Controller($http, urls) {
+    View3Controller.$inject = ['$http', '$scope', 'urls'];
+    function View3Controller($http, $scope, urls) {
         var vm = this;
         vm.message = "";
 
