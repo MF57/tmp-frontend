@@ -4,16 +4,18 @@
         .module('myApp')
         .controller('View3Ctrl', View3Controller);
 
-    View3Controller.$inject = ['$http'];
-    function View3Controller($http) {
+    View3Controller.$inject = ['$http', 'urls'];
+    function View3Controller($http, urls) {
         var vm = this;
         vm.message = "";
 
-        $http.get("http://tmp-stats.tegess.com:8094/api/tests").success(function (response) {
-            vm.message = response;
-        }).error(function () {
-            vm.message = "Could not connect to TMP-Stats"
-        });
+        $scope.refresh = function () {
+            $http.get(urls.statsApi + "tests").success(function (response) {
+                vm.message = response;
+            }).error(function () {
+                vm.message = "Could not connect to TMP-Stats"
+            });
+        };
     }
 
 })();
