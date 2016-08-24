@@ -74,7 +74,7 @@
         var enrollment = "http://localhost:8093/";
         var core = "http://tmp-core.tegess.com:8092/";
         var stats = "http://tmp-stats.tegess.com:8094/";
-        var authlog = "http://localhost:8090/";
+        var authlog = "http://tmp-authlog.tegess.com:8090/";
         var api = "api/";
         this.enrollmentApi = enrollment + api;
         this.coreApi = core + api;
