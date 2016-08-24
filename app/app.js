@@ -71,7 +71,7 @@
     });
 
     mainApp.service('urls', function () {
-        var enrollment = "http://localhost:8093/";
+        var enrollment = "http://tmp-enrollment.tegess.com:8093/";
         var core = "http://tmp-core.tegess.com:8092/";
         var stats = "http://tmp-stats.tegess.com:8094/";
         var authlog = "http://tmp-authlog.tegess.com:8090/";
