@@ -16,20 +16,25 @@
         $urlRouterProvider.otherwise("/");
 
         $stateProvider
+            .state('unauth', {
+                abstract: true,
+                templateUrl: "layouts/unauth/main.html"
+            })
             .state('main', {
                 abstract: true,
-                templateUrl: "partials/abstract/main.html",
+                templateUrl: "layouts/auth/main.html",
                 controller: "MainController"
-            })
-            .state('login', {
-                controller: "MainController",
-                parent:"welcome"
             })
             .state('welcome', {
                 url:"/",
                 templateUrl: "partials/welcome/welcome.html",
                 controller: "WelcomeController",
-                parent:"main"
+                parent:"unauth"
+            })
+           
+            .state('login', {
+                controller: "MainController",
+                parent:"welcome"
             })
             .state('state1', {
                 url:"/state1",
@@ -51,6 +56,8 @@
             })
 
     }
+
+
     
 
 })();
