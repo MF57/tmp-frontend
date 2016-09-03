@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$http', '$scope', 'urls', 'TokenStorage', 'ngDialog', 'toastr'];
-    function MainController($http, $scope, urls, TokenStorage, ngDialog, toastr) {
+    MainController.$inject = ['$http', '$scope', 'ApiUrls', 'TokenStorage', 'ngDialog', 'toastr'];
+    function MainController($http, $scope, ApiUrls, TokenStorage, ngDialog, toastr) {
 
         $scope.isAuthenticated = TokenStorage.isAuthenticated;
 
@@ -19,7 +19,7 @@
         };
 
         $scope.loginFunction = function () {
-            $http.get(urls.authlogApi + "login/credentials?appId="+urls.appId, {
+            $http.get(ApiUrls.authlogApi + "login/credentials?appId="+ApiUrls.appId, {
                 headers : { "Authorization" : btoa($scope.login+":"+$scope.password)}
             }).then(
                 function successCallback(result) {
