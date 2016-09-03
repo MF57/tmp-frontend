@@ -1,10 +1,13 @@
 (function () {
     'use strict';
 
-    var mainApp = angular
-        .module('myApp', ['AuthModule', 'ui.router', 'ngDialog', 'ngAnimate', 'toastr'])
+    angular
+        .module('myApp', ['AuthModule', 'NotificationModule', 'ui.router', 'ngDialog', 'ngAnimate'])
         .config(BaseConfiguration);
 
+    /*
+        Please use this $stateProvider only for abstract states. Standard states should be in partials folder
+     */
     BaseConfiguration.$inject = ['$stateProvider', '$urlRouterProvider'];
     function BaseConfiguration($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
@@ -46,23 +49,7 @@
 
     }
 
-   
     
-    mainApp.config(function(toastrConfig) {
-        angular.extend(toastrConfig, {
-            autoDismiss: false,
-            containerId: 'toast-container',
-            newestOnTop: true,
-            positionClass: 'toast-top-full-width',
-            preventDuplicates: false,
-            preventOpenDuplicates: false,
-            target: 'body',
-            timeOut: 1500,
-            extendedTimeOut: 500
-        });
-    });
-
-
 })();
 
 
