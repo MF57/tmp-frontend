@@ -1,0 +1,18 @@
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="welcome">TMP</a>
+    </div>
+    <ul class="nav navbar-nav" ng-if="isAuthenticated()">
+        <li><a ui-sref="state1">TMP-ENROLLMENT</a></li>
+        <li><a ui-sref="state2">TMP-CORE</a></li>
+        <li><a ui-sref="state3">TMP-STATS</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li ng-if="!isAuthenticated()" ng-click="showLoginPopup()"><a ui-sref="login" style="margin-right:20px">LOGIN</a></li>
+        <li ng-if="isAuthenticated()" ng-click="logoutFunction()"><a ui-sref="login" style="margin-right:20px">LOGOUT</a></li>
+    </ul>
+</nav>
+
+<div ui-view></div>

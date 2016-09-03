@@ -6,14 +6,13 @@
 
     View2Controller.$inject = ['$http', '$scope', 'urls'];
     function View2Controller($http, $scope, urls) {
-        var vm = this;
-        vm.message = "";
+        $scope.message = "";
 
         $scope.refresh = function () {
             $http.get(urls.coreApi + "tests").success(function (response) {
-                vm.message = response;
+                $scope.message = response;
             }).error(function () {
-                vm.message = "Could not connect to TMP-Core"
+                $scope.message = "Could not connect to TMP-Core"
             });
         };
     }
