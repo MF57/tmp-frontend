@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     angular
-        .module('myApp')
+        .module('AuthModule')
         .factory('TokenAuthInterceptor', TokenAuthInterceptor)
 
     TokenAuthInterceptor.$inject = ['$q', 'TokenStorage'];

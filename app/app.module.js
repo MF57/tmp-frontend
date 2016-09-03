@@ -2,7 +2,7 @@
     'use strict';
 
     var mainApp = angular
-        .module('myApp', ['ui.router', 'ngDialog', 'ngAnimate', 'toastr'])
+        .module('myApp', ['AuthModule', 'ui.router', 'ngDialog', 'ngAnimate', 'toastr'])
         .config(BaseConfiguration);
 
     BaseConfiguration.$inject = ['$stateProvider', '$urlRouterProvider'];

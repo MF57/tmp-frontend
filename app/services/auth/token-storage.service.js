@@ -4,8 +4,8 @@
 (function () {
     'use strict';
     angular
-        .module('myApp')
-        .factory('TokenStorage', TokenStorage)
+        .module('AuthModule')
+        .factory('TokenStorage', TokenStorage);
 
 
     TokenStorage.$inject = ['$window'];

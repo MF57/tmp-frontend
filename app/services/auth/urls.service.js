@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     angular
-        .module('myApp')
+        .module('AuthModule')
         .service('ApiUrls', ApiUrls);
 
     ApiUrls.$inject = [];
