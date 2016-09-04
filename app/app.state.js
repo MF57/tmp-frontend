@@ -26,19 +26,6 @@
                 controller: "NavbarController",
                 controllerAs: "vm"
             })
-            .state('welcome', {
-                url:"/",
-                templateUrl: "partials/unauth/welcome/welcome.html",
-                controller: "WelcomeController",
-                controllerAs: 'vm',
-                parent:"unauth"
-            })
-           
-            .state('login', {
-                controller: "WelcomeController",
-                controllerAs: 'vm',
-                parent: "welcome"
-            })
             .state('state1', {
                 url:"/state1",
                 templateUrl: "partials/auth/view1/view1.html",
