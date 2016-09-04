@@ -4,17 +4,20 @@
         .module('myApp')
         .controller('View1Ctrl', View1Controller);
 
-    View1Controller.$inject = ['$http', '$scope', 'ApiUrls', 'TokenStorage'];
-    function View1Controller($http, $scope, ApiUrls, TokenStorage) {
-        $scope.message = "";
+    View1Controller.$inject = ['$http', 'ApiUrls', 'TokenStorage'];
+    function View1Controller($http, ApiUrls, TokenStorage) {
+        var vm = this;
+        vm.message = "";
+        vm.refresh = refresh;
 
-        $scope.refresh = function () {
+
+        function refresh() {
             $http.get(ApiUrls.enrollmentApi + "tests").success(function (response) {
-                $scope.message = response;
+                vm.message = response;
             }).error(function () {
-                $scope.message = "Could not connect to TMP-Enrollment"
+                vm.message = "Could not connect to TMP-Enrollment"
             });
-        };
+        }
     }
 
 })();

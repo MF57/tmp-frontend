@@ -4,17 +4,19 @@
         .module('myApp')
         .controller('View3Ctrl', View3Controller);
 
-    View3Controller.$inject = ['$http', '$scope', 'ApiUrls'];
-    function View3Controller($http, $scope, ApiUrls) {
-        $scope.message = "";
+    View3Controller.$inject = ['$http', 'ApiUrls'];
+    function View3Controller($http, ApiUrls) {
+        var vm = this;
+        vm.message = "";
+        vm.refresh = refresh;
 
-        $scope.refresh = function () {
+        function refresh() {
             $http.get(ApiUrls.statsApi + "tests").success(function (response) {
-                $scope.message = response;
+                vm.message = response;
             }).error(function () {
-                $scope.message = "Could not connect to TMP-Stats"
+                vm.message = "Could not connect to TMP-Stats"
             });
-        };
+        }
     }
 
 })();

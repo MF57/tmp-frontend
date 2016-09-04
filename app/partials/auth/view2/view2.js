@@ -4,17 +4,19 @@
         .module('myApp')
         .controller('View2Ctrl', View2Controller);
 
-    View2Controller.$inject = ['$http', '$scope', 'ApiUrls'];
-    function View2Controller($http, $scope, ApiUrls) {
-        $scope.message = "";
+    View2Controller.$inject = ['$http', 'ApiUrls'];
+    function View2Controller($http, ApiUrls) {
+        var vm = this;
+        vm.message = "";
+        vm.refresh = refresh;
 
-        $scope.refresh = function () {
+        function refresh() {
             $http.get(ApiUrls.coreApi + "tests").success(function (response) {
-                $scope.message = response;
+                vm.message = response;
             }).error(function () {
-                $scope.message = "Could not connect to TMP-Core"
+                vm.message = "Could not connect to TMP-Core"
             });
-        };
+        }
     }
 
 })();
