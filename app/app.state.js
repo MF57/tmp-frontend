@@ -23,7 +23,8 @@
             .state('main', {
                 abstract: true,
                 templateUrl: "layouts/auth/main.html",
-                controller: "MainController"
+                controller: "MainController",
+                controllerAs: "vm"
             })
             .state('welcome', {
                 url:"/",

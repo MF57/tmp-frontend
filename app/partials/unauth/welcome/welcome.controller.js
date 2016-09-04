@@ -13,13 +13,8 @@
         vm.password = "";
 
         vm.loginFunction = loginFunction;
-        vm.goToYourProfile = goToYourProfile;
         vm.showLoginPopup = showLoginPopup;
-
-        function goToYourProfile() {
-            $state.go("state1");
-        }
-
+        
         function showLoginPopup() {
             ngDialog.open({
                 controller:"WelcomeController",
