@@ -27,30 +27,32 @@
             })
             .state('welcome', {
                 url:"/",
-                templateUrl: "partials/welcome/welcome.html",
+                templateUrl: "partials/unauth/welcome/welcome.html",
                 controller: "WelcomeController",
+                controllerAs: 'vm',
                 parent:"unauth"
             })
            
             .state('login', {
-                controller: "MainController",
-                parent:"welcome"
+                controller: "WelcomeController",
+                controllerAs: 'vm',
+                parent: "welcome"
             })
             .state('state1', {
                 url:"/state1",
-                templateUrl: "partials/view1/view1.html",
+                templateUrl: "partials/auth/view1/view1.html",
                 controller: "View1Ctrl",
                 parent:"main"
             })
             .state('state2', {
                 url:"/state2",
-                templateUrl: "partials/view2/view2.html",
+                templateUrl: "partials/auth/view2/view2.html",
                 controller: "View2Ctrl",
                 parent:"main"
             })
             .state('state3', {
                 url:"/state3",
-                templateUrl: "partials/view3/view3.html",
+                templateUrl: "partials/auth/view3/view3.html",
                 controller: "View3Ctrl",
                 parent:"main"
             })

@@ -9,15 +9,15 @@
 
         $scope.isAuthenticated = TokenStorage.isAuthenticated;
 
-        $scope.showLoginPopup = function() {
-            ngDialog.open({
-                controller:"MainController",
-                template:"partials/login/login.html",
-                className: "ngdialog-theme-default",
-                width:"250px"
-            });
-        };
-
+        // $scope.showLoginPopup = function() {
+        //     ngDialog.open({
+        //         controller:"MainController",
+        //         template:"partials/login/login.html",
+        //         className: "ngdialog-theme-default",
+        //         width:"250px"
+        //     });
+        // };
+        //
         $scope.loginFunction = function () {
             $http.get(ApiUrls.authlogApi + "login/credentials?appId="+ApiUrls.appId, {
                 headers : { "Authorization" : btoa($scope.login+":"+$scope.password)}
