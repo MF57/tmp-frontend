@@ -2,10 +2,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('MainController', MainController);
+        .controller('NavbarController', NavbarController);
 
-    MainController.$inject = ['TokenStorage', 'toastr'];
-    function MainController(TokenStorage, toastr) {
+    NavbarController.$inject = ['TokenStorage', 'toastr'];
+    function NavbarController(TokenStorage, toastr) {
         var vm = this;
         
         vm.isAuthenticated = TokenStorage.isAuthenticated();

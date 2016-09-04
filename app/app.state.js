@@ -22,8 +22,8 @@
             })
             .state('main', {
                 abstract: true,
-                templateUrl: "layouts/auth/main.html",
-                controller: "MainController",
+                templateUrl: "layouts/auth/navbar.html",
+                controller: "NavbarController",
                 controllerAs: "vm"
             })
             .state('welcome', {
