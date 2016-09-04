@@ -14,12 +14,24 @@
 
         vm.loginFunction = loginFunction;
         vm.showLoginPopup = showLoginPopup;
+        vm.showRegisterPopup = showRegisterPopup;
+        vm.registerFunction = registerFunction;
         
         function showLoginPopup() {
             ngDialog.open({
                 controller:"WelcomeController",
                 controllerAs: "vm",
                 template:"partials/unauth/login/login.html",
+                className: "ngdialog-theme-default",
+                width:"250px"
+            });
+        }
+
+        function showRegisterPopup() {
+            ngDialog.open({
+                controller:"WelcomeController",
+                controllerAs: "vm",
+                template:"partials/unauth/register/register.html",
                 className: "ngdialog-theme-default",
                 width:"250px"
             });
@@ -39,6 +51,24 @@
                 function failureCallback(result) {
                     toastr.error("Something went wrong, please try again");
                 });
+        }
+
+        function registerFunction() {
+            $http.post(ApiUrls.authlogApi + "applications/"+ApiUrls.appId+"/users", {
+                username:vm.login,
+                password:vm.password,
+                mail:vm.mail,
+                picture:vm.picture
+            }).then(
+                function successCallback(result) {
+                    ngDialog.close();
+                    $state.go("welcome");
+                    toastr.success("Now you can log in")
+                },
+                function failureCallback(result) {
+                    toastr.error("Something went wrong, please try again");
+                });
+
         }
         
     }
