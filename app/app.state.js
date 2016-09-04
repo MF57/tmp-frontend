@@ -26,31 +26,9 @@
                 controller: "NavbarController",
                 controllerAs: "vm"
             })
-            .state('state1', {
-                url:"/state1",
-                templateUrl: "partials/auth/view1/view1.html",
-                controller: "View1Ctrl",
-                controllerAs: "vm",
-                parent:"main"
-            })
-            .state('state2', {
-                url:"/state2",
-                templateUrl: "partials/auth/view2/view2.html",
-                controller: "View2Ctrl",
-                controllerAs: "vm",
-                parent:"main"
-            })
-            .state('state3', {
-                url:"/state3",
-                templateUrl: "partials/auth/view3/view3.html",
-                controller: "View3Ctrl",
-                controllerAs: "vm",
-                parent:"main"
-            })
+        
 
     }
-
-
     
 
 })();
