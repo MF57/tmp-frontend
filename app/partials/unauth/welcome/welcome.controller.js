@@ -8,11 +8,19 @@
     function WelcomeController($http, $state, ApiUrls, TokenStorage, ngDialog, toastr) {
         var vm = this;
 
-        vm.isAuthenticated = TokenStorage.isAuthenticated;
+        vm.isAuthenticated = TokenStorage.isAuthenticated();
         vm.login = "";
         vm.password = "";
 
-        vm.showLoginPopup = function() {
+        vm.loginFunction = loginFunction;
+        vm.goToYourProfile = goToYourProfile;
+        vm.showLoginPopup = showLoginPopup;
+
+        function goToYourProfile() {
+            $state.go("state1");
+        }
+
+        function showLoginPopup() {
             ngDialog.open({
                 controller:"WelcomeController",
                 controllerAs: "vm",
@@ -20,9 +28,9 @@
                 className: "ngdialog-theme-default",
                 width:"250px"
             });
-        };
+        }
 
-        vm.loginFunction = function () {
+        function loginFunction() {
             $http.get(ApiUrls.authlogApi + "login/credentials?appId="+ApiUrls.appId, {
                 headers : { "Authorization" : btoa(vm.login+":"+vm.password)}
             }).then(
@@ -34,12 +42,10 @@
                     toastr.success("Welcome, " + TokenStorage.decode(result.data.token).username);
                 },
                 function failureCallback(result) {
-                    console.log(result);
                     toastr.error("Something went wrong, please try again");
                 });
-        };
-
-
+        }
+        
     }
 
 })();

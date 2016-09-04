@@ -1,3 +1,3 @@
 Tu będzie wspaniała strona główna
-<button ng-click="vm.showLoginPopup()" class="btn btn-primary">Login</button>
-<button class = "btn btn-primary">Go to Your Profile</button>
+<button ng-hide="vm.isAuthenticated" ng-click="vm.showLoginPopup()" class="btn btn-primary">Login</button>
+<button ng-show="vm.isAuthenticated" ng-click="vm.goToYourProfile()" class = "btn btn-primary">Go to Your Profile</button>
