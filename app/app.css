@@ -14,5 +14,48 @@
 }
 body {
   background-color: #ddd;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Source Sans Pro", 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    src: url("static/fonts/SourceSansPro-Regular.ttf");
+}
+
+
+
+#welcome-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("static/images/welcome-background.jpg") fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+#welcome-background:after {
+    background: rgba(109, 73, 150, 0.7) fixed;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    content: '';
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    color: white;
+    font-size: 72px;
+
 }
