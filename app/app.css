@@ -59,3 +59,13 @@ body {
     font-size: 72px;
 
 }
+
+.btn.welcome-button {
+    border-radius: 0;
+    font-size: 20px;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    margin-top: 10px;
+
+}
