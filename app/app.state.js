@@ -15,6 +15,7 @@
     function StateConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
+
         $stateProvider
             .state('unauth', {
                 abstract: true,
@@ -24,11 +25,20 @@
                 abstract: true,
                 templateUrl: "layouts/auth/navbar.html",
                 controller: "NavbarController",
-                controllerAs: "vm"
-            })
-        
+                controllerAs: "vm",
+                resolve: {
+                    security: SecureState
+                }
+            });
 
     }
-    
+
+    SecureState.$inject = ['$q', 'TokenStorage'];
+    function SecureState($q, TokenStorage) {
+        if (!TokenStorage.isAuthenticated()) {
+            return $q.reject("Not Authorized");
+        }
+    }
+
 
 })();
