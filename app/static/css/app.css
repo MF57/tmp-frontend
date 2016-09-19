@@ -19,7 +19,7 @@ body {
 
 @font-face {
     font-family: Source Sans Pro;
-    src: url("static/fonts/SourceSansPro-Regular.ttf");
+    src: url("../fonts/SourceSansPro-Regular.ttf");
 }
 
 
@@ -30,7 +30,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: url("static/images/welcome-background.jpg") fixed;
+    right: 0;
+    bottom: 0;
+    background: url("../images/welcome-background.jpg") fixed;
     background-size: cover;
     z-index: 1;
 }
@@ -53,6 +55,10 @@ body {
     align-items: center;
     height: 100%;
     color: white;
+    -webkit-animation: FADE_IN_FROM_LEFT 1s  forwards;
+    -moz-animation:    FADE_IN_FROM_LEFT 1s  forwards;
+    -o-animation:      FADE_IN_FROM_LEFT 1s  forwards;
+    animation:         FADE_IN_FROM_LEFT 1s  forwards;
 
 }
 
@@ -100,4 +106,8 @@ body {
 
 .btn.welcome-button.login-button {
     margin: 20px 20px 0 0;
+    -webkit-animation: FADE_IN_WITH_DELAY 1.5s  forwards;
+    -moz-animation:    FADE_IN_WITH_DELAY 1.5s  forwards;
+    -o-animation:      FADE_IN_WITH_DELAY 1.5s  forwards;
+    animation:         FADE_IN_WITH_DELAY 1.5s  forwards;
 }

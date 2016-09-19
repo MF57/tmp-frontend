@@ -16,6 +16,7 @@
         vm.showLoginPopup = showLoginPopup;
         vm.showRegisterPopup = showRegisterPopup;
         vm.registerFunction = registerFunction;
+
         
         function showLoginPopup() {
             ngDialog.open({
