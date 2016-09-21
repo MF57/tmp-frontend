@@ -58,8 +58,7 @@
             $http.post(ApiUrls.authlogApi + "applications/"+ApiUrls.appId+"/users", {
                 username:vm.login,
                 password:vm.password,
-                mail:vm.mail,
-                picture:vm.picture
+                mail:vm.mail
             }).then(
                 function successCallback(result) {
                     ngDialog.close();
