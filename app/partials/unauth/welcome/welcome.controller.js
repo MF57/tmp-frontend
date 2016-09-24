@@ -23,7 +23,7 @@
                 controller:"WelcomeController",
                 controllerAs: "vm",
                 template:"partials/unauth/login/login.html",
-                className: "ngdialog-theme-default",
+                className: "ngdialog-theme-default welcome-dialog",
                 width:"250px"
             });
         }
@@ -33,7 +33,7 @@
                 controller:"WelcomeController",
                 controllerAs: "vm",
                 template:"partials/unauth/register/register.html",
-                className: "ngdialog-theme-default",
+                className: "ngdialog-theme-default welcome-dialog",
                 width:"250px"
             });
         }

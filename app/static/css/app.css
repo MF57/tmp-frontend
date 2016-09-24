@@ -22,6 +22,11 @@ body {
     src: url("../fonts/SourceSansPro-Regular.ttf");
 }
 
+.blurry-text {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
 
 
 #welcome-background {
@@ -111,3 +116,15 @@ body {
     -o-animation:      FADE_IN_WITH_DELAY 1.5s  forwards;
     animation:         FADE_IN_WITH_DELAY 1.5s  forwards;
 }
+
+
+/*********************** DIALOGS ***************************/
+
+.ngdialog-theme-default.welcome-dialog .ngdialog-overlay {
+    background-color: rgba(72, 0, 74, 0.95);
+}
+
+.ngdialog-theme-default.welcome-dialog .ngdialog-content {
+    background-color: rgba(0, 0, 0, 0);
+}
+
