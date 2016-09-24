@@ -11,6 +11,7 @@
         vm.isAuthenticated = TokenStorage.isAuthenticated();
         vm.login = "";
         vm.password = "";
+        vm.blurry = false;
 
         vm.loginFunction = loginFunction;
         vm.showLoginPopup = showLoginPopup;
@@ -19,23 +20,28 @@
 
 
         function showLoginPopup() {
-            ngDialog.open({
+            vm.blurry = true;
+            var dialog = ngDialog.open({
                 controller: "WelcomeController",
                 controllerAs: "vm",
                 template: "partials/unauth/login/login.html",
                 className: "ngdialog-theme-default welcome-dialog",
                 width: "100%"
             });
+            dialog.closePromise.then(() => vm.blurry = false)
         }
 
         function showRegisterPopup() {
-            ngDialog.open({
+            vm.blurry = true;
+            var dialog = ngDialog.open({
                 controller: "WelcomeController",
                 controllerAs: "vm",
                 template: "partials/unauth/register/register.html",
                 className: "ngdialog-theme-default welcome-dialog",
                 width: "100%"
             });
+            dialog.closePromise.then(() => vm.blurry = false)
+
         }
 
         function loginFunction() {

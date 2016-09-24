@@ -23,10 +23,11 @@ body {
 }
 
 .blurry-text {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5);
-}
+    color: transparent !important;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5) !important;
+    border-color: rgba(255,255,255,0.3) !important;
 
+}
 
 
 #welcome-background {
@@ -154,26 +155,40 @@ body {
     height: 60px;
     border-radius: 0;
     background-color: rgba(141, 97, 150, 0);
-    border: 2px solid white;
+    border: 2px solid #401732;
     color: white;
 }
 
-.welcome-dialog .form-control.welcome-dialog-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.welcome-dialog .form-control.welcome-dialog-input::-webkit-input-placeholder {
     color: #401732;
 }
-.welcome-dialog .form-control.welcome-dialog-input::-moz-placeholder { /* Firefox 19+ */
+
+.welcome-dialog .form-control.welcome-dialog-input::-moz-placeholder {
+     color: #401732;
+ }
+.welcome-dialog .form-control.welcome-dialog-input:-ms-input-placeholder {
     color: #401732;
 }
-.welcome-dialog .form-control.welcome-dialog-input:-ms-input-placeholder { /* IE 10+ */
+.welcome-dialog .form-control.welcome-dialog-input:-moz-placeholder {
     color: #401732;
 }
-.welcome-dialog .form-control.welcome-dialog-input:-moz-placeholder { /* Firefox 18- */
-    color: #401732;
+.welcome-dialog .form-control.welcome-dialog-input:focus::-webkit-input-placeholder {
+    color: white;
 }
+.welcome-dialog .form-control.welcome-dialog-input::-moz-placeholder {
+    color: white;
+}
+.welcome-dialog .form-control.welcome-dialog-input:-ms-input-placeholder {
+    color: white;
+}
+.welcome-dialog .form-control.welcome-dialog-input:-moz-placeholder {
+    color: white;
+}
+
 .welcome-dialog .form-control.welcome-dialog-input:focus {
     outline: none;
     box-shadow: none;
-    border: 2px solid #401732;
+    border: 2px solid white;
 }
 
 .welcome-dialog .btn.welcome-button.welcome-dialog-button {

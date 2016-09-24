@@ -1,19 +1,19 @@
 <div id="welcome-background">
     <div  class="pull-right p-t-1">
-        <button ng-hide="vm.isAuthenticated" ng-click="vm.showLoginPopup()"
+        <button ng-class="{'blurry-text': vm.blurry}" ng-hide="vm.isAuthenticated" ng-click="vm.showLoginPopup()"
                 class="btn welcome-button login-button">
             LOGIN <i class="glyphicon glyphicon-menu-right"></i>
         </button>
     </div>
     <div class="welcome-wrapper ">
-        <h1 class="text-left welcome-title">Tournament Management Platform</h1>
+        <h1 ng-class="{'blurry-text': vm.blurry}" class="text-left welcome-title">Tournament Management Platform</h1>
         <div class="text-left welcome-content">
-            <p>LUXURIOUS PLACE WHERE YOUR VICTORY BEGINS.<br> MADE FOR YOU. CRAFTED BY PROFESSIONALS.  </p>
-            <button ng-hide="vm.isAuthenticated" ng-click="vm.showRegisterPopup()"
+            <p ng-class="{'blurry-text': vm.blurry}">LUXURIOUS PLACE WHERE YOUR VICTORY BEGINS.<br> MADE FOR YOU. CRAFTED BY PROFESSIONALS.  </p>
+            <button ng-class="{'blurry-text': vm.blurry}" ng-hide="vm.isAuthenticated" ng-click="vm.showRegisterPopup()"
                     class="btn welcome-button ">
                 LET'S GET STARTED <i class="glyphicon glyphicon-menu-right"></i>
             </button>
-            <button ng-show="vm.isAuthenticated" ui-sref="state1"
+            <button ng-class="{'blurry-text': vm.blurry}" ng-show="vm.isAuthenticated" ui-sref="state1"
                     class="btn welcome-button ">
                 LET'S GET STARTED <i class="glyphicon glyphicon-menu-right"></i>
             </button>
