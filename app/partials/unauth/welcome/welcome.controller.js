@@ -17,30 +17,30 @@
         vm.showRegisterPopup = showRegisterPopup;
         vm.registerFunction = registerFunction;
 
-        
+
         function showLoginPopup() {
             ngDialog.open({
-                controller:"WelcomeController",
+                controller: "WelcomeController",
                 controllerAs: "vm",
-                template:"partials/unauth/login/login.html",
+                template: "partials/unauth/login/login.html",
                 className: "ngdialog-theme-default welcome-dialog",
-                width:"250px"
+                width: "100%"
             });
         }
 
         function showRegisterPopup() {
             ngDialog.open({
-                controller:"WelcomeController",
+                controller: "WelcomeController",
                 controllerAs: "vm",
-                template:"partials/unauth/register/register.html",
+                template: "partials/unauth/register/register.html",
                 className: "ngdialog-theme-default welcome-dialog",
-                width:"250px"
+                width: "100%"
             });
         }
 
         function loginFunction() {
-            $http.get(ApiUrls.authlogApi + "login/credentials?appId="+ApiUrls.appId, {
-                headers : { "Authorization" : btoa(vm.login+":"+vm.password)}
+            $http.get(ApiUrls.authlogApi + "login/credentials?appId=" + ApiUrls.appId, {
+                headers: {"Authorization": btoa(vm.login + ":" + vm.password)}
             }).then(
                 function successCallback(result) {
                     console.log("Successful login - token = " + result.data.token);
@@ -55,10 +55,10 @@
         }
 
         function registerFunction() {
-            $http.post(ApiUrls.authlogApi + "applications/"+ApiUrls.appId+"/users", {
-                username:vm.login,
-                password:vm.password,
-                mail:vm.mail
+            $http.post(ApiUrls.authlogApi + "applications/" + ApiUrls.appId + "/users", {
+                username: vm.login,
+                password: vm.password,
+                mail: vm.mail
             }).then(
                 function successCallback(result) {
                     ngDialog.close();
@@ -70,7 +70,7 @@
                 });
 
         }
-        
+
     }
 
 })();

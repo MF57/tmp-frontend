@@ -120,11 +120,38 @@ body {
 
 /*********************** DIALOGS ***************************/
 
+.ngdialog-theme-default.welcome-dialog {
+    /*width: 400px;*/
+    padding: 0;
+}
+
+
 .ngdialog-theme-default.welcome-dialog .ngdialog-overlay {
     background-color: rgba(72, 0, 74, 0.95);
 }
 
 .ngdialog-theme-default.welcome-dialog .ngdialog-content {
     background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ngdialog-theme-default.welcome-dialog .ngdialog-close:before {
+    color: white;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 20px 20px 0 0;
+}
+
+.welcome-dialog .form-control.welcome-dialog-input {
+    width: 320px;
+    height: 60px;
+}
+
+.welcome-dialog .btn.welcome-button.welcome-dialog-button {
+    width: 320px;
+    height: 60px;
 }
 
