@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('WelcomeController', WelcomeController);
 
-    WelcomeController.$inject = ['$http', '$state', 'ApiUrls', 'TokenStorage', 'ngDialog', 'toastr', 'LoginService'];
-    function WelcomeController($http, $state, ApiUrls, TokenStorage, ngDialog, toastr, LoginService) {
+    WelcomeController.$inject = ['$state', 'ngDialog', 'toastr', 'TokenStorage', 'LoginService', 'RegisterService'];
+    function WelcomeController($state, ngDialog, toastr, TokenStorage, LoginService, RegisterService) {
         var vm = this;
 
         vm.isAuthenticated = TokenStorage.isAuthenticated();
@@ -47,36 +47,38 @@
         }
 
         function loginFunction() {
-            LoginService.login(vm.login, vm.password).$promise.then(
-                function successCallback(result) {
-                    TokenStorage.store(result.token);
-                    ngDialog.close();
-                    $state.go("state1");
-                 //   toastr.success("Welcome, " + );
-                    //TokenStorage.decode(result.token).username
-                },
-                function failureCallback() {
-                    toastr.error("Something went wrong, please try again");
-                });
+            LoginService.login(vm.login, vm.password)
+                .$promise.then(successCallback, failureCallback);
+
+            function successCallback(result) {
+                TokenStorage.store(result.token);
+                ngDialog.close();
+                $state.go("state1");
+                toastr.success("Welcome, " +  TokenStorage.decode(result.token).username);
+            }
+
+            function failureCallback() {
+                toastr.error("Something went wrong, please try again");
+            }
         }
 
         function registerFunction() {
             if (vm.password !== vm.confirmPassword) {
                 return;
             }
-            $http.post(ApiUrls.authlogApi + "applications/" + ApiUrls.appId + "/users", {
-                username: vm.login,
-                password: vm.password,
-                mail: vm.mail
-            }).then(
-                function successCallback(result) {
-                    ngDialog.close();
-                    $state.go("welcome");
-                    toastr.success("Now you can log in")
-                },
-                function failureCallback(result) {
-                    toastr.error("Something went wrong, please try again");
-                });
+
+            RegisterService.register(vm.login, vm.password, vm.mail)
+                .$promise.then(successCallback, failureCallback);
+
+            function successCallback() {
+                ngDialog.close();
+                $state.go("welcome");
+                toastr.success("Now you can log in")
+            }
+
+            function failureCallback() {
+                toastr.error("Something went wrong, please try again");
+            }
 
         }
 

@@ -17,9 +17,6 @@
 
         var loginUrl =  ApiUrls.authlogApi + "login/credentials?appId=" + ApiUrls.appId;
 
-
-        return service;
-
         function login(login, password) {
             return $resource(loginUrl, {}, {
                 'query': {
@@ -34,13 +31,8 @@
         }
 
 
-        // return $resource(loginUrl, {}, {
-        //     'login': {
-        //         method: 'GET',
-        //         isArray: false,
-        //         headers: {"Authorization": btoa(vm.login + ":" + vm.password)}
-        //     }
-        // });
+        return service;
+
     }
     
 
