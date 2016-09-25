@@ -4,13 +4,15 @@
         .module('myApp')
         .controller('WelcomeController', WelcomeController);
 
-    WelcomeController.$inject = ['$http', '$state', 'ApiUrls', 'TokenStorage', 'ngDialog', 'toastr'];
-    function WelcomeController($http, $state, ApiUrls, TokenStorage, ngDialog, toastr) {
+    WelcomeController.$inject = ['$http', '$state', 'ApiUrls', 'TokenStorage', 'ngDialog', 'toastr', 'LoginService'];
+    function WelcomeController($http, $state, ApiUrls, TokenStorage, ngDialog, toastr, LoginService) {
         var vm = this;
 
         vm.isAuthenticated = TokenStorage.isAuthenticated();
         vm.login = "";
         vm.password = "";
+        vm.confirmPassword = "";
+        vm.mail = "";
         vm.blurry = false;
 
         vm.loginFunction = loginFunction;
@@ -45,22 +47,23 @@
         }
 
         function loginFunction() {
-            $http.get(ApiUrls.authlogApi + "login/credentials?appId=" + ApiUrls.appId, {
-                headers: {"Authorization": btoa(vm.login + ":" + vm.password)}
-            }).then(
+            LoginService.login(vm.login, vm.password).$promise.then(
                 function successCallback(result) {
-                    console.log("Successful login - token = " + result.data.token);
-                    TokenStorage.store(result.data.token);
+                    TokenStorage.store(result.token);
                     ngDialog.close();
                     $state.go("state1");
-                    toastr.success("Welcome, " + TokenStorage.decode(result.data.token).username);
+                 //   toastr.success("Welcome, " + );
+                    //TokenStorage.decode(result.token).username
                 },
-                function failureCallback(result) {
+                function failureCallback() {
                     toastr.error("Something went wrong, please try again");
                 });
         }
 
         function registerFunction() {
+            if (vm.password !== vm.confirmPassword) {
+                return;
+            }
             $http.post(ApiUrls.authlogApi + "applications/" + ApiUrls.appId + "/users", {
                 username: vm.login,
                 password: vm.password,
