@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('WelcomeController', WelcomeController);
 
-    WelcomeController.$inject = ['$state', 'ngDialog', 'toastr', 'TokenStorage', 'LoginService', 'RegisterService'];
-    function WelcomeController($state, ngDialog, toastr, TokenStorage, LoginService, RegisterService) {
+    WelcomeController.$inject = ['$state', '$timeout', 'ngDialog', 'toastr', 'TokenStorage', 'LoginService', 'RegisterService'];
+    function WelcomeController($state, $timeout, ngDialog, toastr, TokenStorage, LoginService, RegisterService) {
         var vm = this;
 
         vm.isAuthenticated = TokenStorage.isAuthenticated();
@@ -14,6 +14,8 @@
         vm.confirmPassword = "";
         vm.mail = "";
         vm.blurry = false;
+        vm.loginSuccessful = false;
+        vm.registerSuccessful = false;
 
         vm.loginFunction = loginFunction;
         vm.showLoginPopup = showLoginPopup;
@@ -52,9 +54,11 @@
 
             function successCallback(result) {
                 TokenStorage.store(result.token);
-                ngDialog.close();
-                $state.go("state1");
-                toastr.success("Welcome, " +  TokenStorage.decode(result.token).username);
+                vm.loginSuccessful = true;
+                $timeout(function () {
+                    ngDialog.close();
+                    $state.go("state1");
+                }, 1000);
             }
 
             function failureCallback() {
