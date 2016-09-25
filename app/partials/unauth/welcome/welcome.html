@@ -8,13 +8,15 @@
     <div class="welcome-wrapper ">
         <h1 ng-class="{'blurry-text': vm.blurry}" class="text-left welcome-title">Tournament Management Platform</h1>
         <div class="text-left welcome-content">
-            <p ng-class="{'blurry-text': vm.blurry}">LUXURIOUS PLACE WHERE YOUR VICTORY BEGINS.<br> MADE FOR YOU. CRAFTED BY PROFESSIONALS.  </p>
+            <p ng-class="{'blurry-text': vm.blurry}">LUXURIOUS PLACE WHERE YOUR VICTORY BEGINS.
+                <br> MADE FOR YOU. CRAFTED BY PROFESSIONALS.
+            </p>
             <button ng-class="{'blurry-text': vm.blurry}" ng-hide="vm.isAuthenticated" ng-click="vm.showRegisterPopup()"
                     class="btn welcome-button ">
                 LET'S GET STARTED <i class="glyphicon glyphicon-menu-right"></i>
             </button>
             <button ng-class="{'blurry-text': vm.blurry}" ng-show="vm.isAuthenticated" ui-sref="state1"
-                    class="btn welcome-button ">
+                    class="btn welcome-button">
                 LET'S GET STARTED <i class="glyphicon glyphicon-menu-right"></i>
             </button>
         </div>

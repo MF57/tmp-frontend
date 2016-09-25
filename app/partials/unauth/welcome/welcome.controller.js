@@ -15,6 +15,7 @@
         vm.mail = "";
         vm.blurry = false;
         vm.loginSuccessful = false;
+        vm.loginFailed = false;
         vm.registerSuccessful = false;
 
         vm.loginFunction = loginFunction;
@@ -49,6 +50,7 @@
         }
 
         function loginFunction() {
+            vm.loginFailed = false;
             LoginService.login(vm.login, vm.password)
                 .$promise.then(successCallback, failureCallback);
 
@@ -62,8 +64,8 @@
                 }, 1000);
             }
 
-            function failureCallback() {
-                toastr.error("Something went wrong, please try again");
+            function failureCallback(result) {
+                vm.loginFailed = true;
             }
         }
 
