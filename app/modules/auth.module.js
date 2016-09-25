@@ -4,7 +4,7 @@
 (function () {
     'use strict';
     angular
-        .module('AuthModule', [])
+        .module('AuthModule', ['ngResource'])
         .config(AuthConfig);
 
 

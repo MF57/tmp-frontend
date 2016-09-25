@@ -157,31 +157,36 @@ body {
     background-color: rgba(141, 97, 150, 0);
     border: 2px solid #401732;
     color: white;
+    letter-spacing: 3px;
 }
 
 .welcome-dialog .form-control.welcome-dialog-input::-webkit-input-placeholder {
     color: #401732;
+    letter-spacing: 3px;
 }
 
 .welcome-dialog .form-control.welcome-dialog-input::-moz-placeholder {
      color: #401732;
+    letter-spacing: 3px;
  }
 .welcome-dialog .form-control.welcome-dialog-input:-ms-input-placeholder {
     color: #401732;
+    letter-spacing: 3px;
 }
 .welcome-dialog .form-control.welcome-dialog-input:-moz-placeholder {
     color: #401732;
+    letter-spacing: 3px;
 }
 .welcome-dialog .form-control.welcome-dialog-input:focus::-webkit-input-placeholder {
     color: white;
 }
-.welcome-dialog .form-control.welcome-dialog-input::-moz-placeholder {
+.welcome-dialog .form-control.welcome-dialog-input:focus::-moz-placeholder {
     color: white;
 }
-.welcome-dialog .form-control.welcome-dialog-input:-ms-input-placeholder {
+.welcome-dialog .form-control.welcome-dialog-input:focus:-ms-input-placeholder {
     color: white;
 }
-.welcome-dialog .form-control.welcome-dialog-input:-moz-placeholder {
+.welcome-dialog .form-control.welcome-dialog-input:focus:-moz-placeholder {
     color: white;
 }
 
