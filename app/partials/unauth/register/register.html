@@ -1,7 +1,11 @@
-<div class="input-group login-form">
+<div ng-hide='vm.registerSuccessful'class="input-group login-form">
     <input ng-model="vm.login" type="text" class="form-control welcome-dialog-input" placeholder="Login" >
     <input ng-model="vm.mail" type="email" class="form-control welcome-dialog-input" placeholder="Mail">
     <input ng-model="vm.password" type="password" class="form-control welcome-dialog-input" placeholder="Password">
     <input ng-model="vm.confirmPassword" type="password" class="form-control welcome-dialog-input" placeholder="Confirm Password">
     <button ng-click="vm.registerFunction()" class="btn welcome-button welcome-dialog-button">Register</button>
+</div>
+<div ng-show='vm.registerSuccessful' class="successful-popup">
+    <i class="glyphicon glyphicon-ok"></i>
+    <div>EVERYTHING OK<br><br><br> SO NICE YOU ARE JOINING US</div>
 </div>

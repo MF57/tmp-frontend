@@ -57,6 +57,7 @@
                 vm.loginSuccessful = true;
                 $timeout(function () {
                     ngDialog.close();
+                    vm.loginSuccessful = false;
                     $state.go("state1");
                 }, 1000);
             }
@@ -75,9 +76,12 @@
                 .$promise.then(successCallback, failureCallback);
 
             function successCallback() {
-                ngDialog.close();
-                $state.go("welcome");
-                toastr.success("Now you can log in")
+                vm.registerSuccessful = true;
+                $timeout(function () {
+                    ngDialog.close();
+                    vm.registerSuccessful = false;
+                    showLoginPopup();
+                }, 2500);
             }
 
             function failureCallback() {
