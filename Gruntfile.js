@@ -28,6 +28,19 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    //sass
+    sass : {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'app/static/scss/',
+          src: ['*.scss'],
+          dest: 'app/static/css/',
+          ext: '.css'
+        }]
+      }
+    },
+
     // Project settings
     yeoman: appConfig,
 
@@ -452,6 +465,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'sass',
     'newer:jshint',
     'test',
     'build'
@@ -459,4 +473,6 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-bower-install');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+
 };
