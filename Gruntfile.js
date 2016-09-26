@@ -65,6 +65,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+      sass: {
+        files: ['app/static/scss/*.scss'],
+        tasks: ['sass']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -425,6 +429,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'sass',
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
