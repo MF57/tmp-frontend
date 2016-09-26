@@ -1,0 +1,33 @@
+@import "variables";
+
+.navbar.tmp-navbar {
+  background-color: $color-jacarta;
+  border-radius: 0;
+  width: $navbarWidth;
+  height: 100vh;
+  position: fixed;
+
+  a {
+    color: $color-white;
+    padding-right: 0;
+  }
+
+  .nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+  }
+
+  .nav>li {
+    width: 80%;
+    margin-left: 10%;
+    border-bottom: 5px solid $color-studio;
+    text-align: right;
+  }
+  .nav>li:hover, .nav>li:focus, .nav>li.active {
+    background-color: transparent;
+    border-bottom: 5px solid $color-white;
+  }
+}
+.main {
+  width: calc(100vw - #{$navbarWidth});
+  margin-left: $navbarWidth;
+}

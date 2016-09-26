@@ -3,6 +3,7 @@
 /**************************IMPORTS********************************************/
 
 @import "test.css";
+@import "navbar.css";
 
 /*****************************************************************************/
 
@@ -21,7 +22,7 @@
   width: 200px;
 }
 body {
-  background-color: #ddd;
+  background-color: #754996;
   font-family: "Source Sans Pro", 'Open Sans', sans-serif;
 }
 

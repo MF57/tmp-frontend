@@ -1,17 +1,13 @@
 
 <!-- NAVIGATION -->
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="welcome">TMP</a>
-    </div>
+<nav class="navbar tmp-navbar" role="navigation">
     <ul class="nav navbar-nav" ng-show="vm.isAuthenticated">
+        <img ng-src="{{vm.userPictureUrl}}" style="width:140px; height: 140px; border-radius: 75px">
         <li><a ui-sref="state1">TMP-ENROLLMENT</a></li>
         <li><a ui-sref="state2">TMP-CORE</a></li>
         <li><a ui-sref="state3">TMP-STATS</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login" style="margin-right:20px">LOGOUT</a></li>
+        <li ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login">LOGOUT</a></li>
     </ul>
 </nav>
 
-<div ui-view></div>
+<div class="main" ui-view></div>
