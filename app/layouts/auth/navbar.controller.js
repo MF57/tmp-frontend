@@ -4,14 +4,16 @@
         .module('myApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['TokenStorage', 'LoginService', 'ApiUrls'];
-    function NavbarController(TokenStorage, LoginService, ApiUrls) {
+    NavbarController.$inject = ['TokenStorage', 'LoginService', 'ApiUrls', 'UserService'];
+    function NavbarController(TokenStorage, LoginService, ApiUrls, UserService) {
         var vm = this;
         
         vm.isAuthenticated = TokenStorage.isAuthenticated();
-        vm.logoutFunction = logoutFunction;
         vm.username = TokenStorage.decode(TokenStorage.retrieve()).username;
-        vm.userPictureUrl = ApiUrls.authlogApi + "applications/" + ApiUrls.appId + "/users/" + vm.username + "/photo/" + "0969d37a-facd-4a0d-84ca-50cbd33969e1";
+        vm.logoutFunction = logoutFunction;
+        vm.refreshUserData = refreshUserData;
+
+        refreshUserData();
 
         $(document).ready(function () {
             $('ul.nav > li').click(function (e) {
@@ -20,6 +22,21 @@
                 $(this).addClass('active');
             });
         });
+
+        function refreshUserData() {
+            UserService.getUser(vm.username).$promise.then(successCallback, failueCallback);
+
+            function successCallback(result) {
+                vm.userData = result;
+                console.log(vm.userData);
+                vm.userPictureUrl = vm.userData.pictureURL;
+            }
+
+            function failueCallback(result) {
+                console.log("Can't get user data.")
+            }
+
+        }
 
         function logoutFunction() {
           //  toastr.success("See you, " + TokenStorage.decode(TokenStorage.retrieve()).username);

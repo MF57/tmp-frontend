@@ -19,12 +19,26 @@
   .nav>li {
     width: 80%;
     margin-left: 10%;
-    border-bottom: 5px solid $color-studio;
+    border-bottom: 2px solid $color-studio;
     text-align: right;
   }
   .nav>li:hover, .nav>li:focus, .nav>li.active {
     background-color: transparent;
-    border-bottom: 5px solid $color-white;
+    border-bottom: 2px solid $color-white;
+  }
+  .user-picture {
+    width: 140px;
+    height: 140px;
+    -webkit-border-radius:75px;
+    -moz-border-radius:75px;
+    border-radius:75px;
+    margin-top:20px;
+    margin-left: calc((#{$navbarWidth} - 140px)/2)
+  }
+  .user-username {
+    color: $color-white;
+    font-size: 16px;
+    text-align: center;
   }
 }
 .main {

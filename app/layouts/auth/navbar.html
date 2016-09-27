@@ -2,7 +2,8 @@
 <!-- NAVIGATION -->
 <nav class="navbar tmp-navbar" role="navigation">
     <ul class="nav navbar-nav" ng-show="vm.isAuthenticated">
-        <img ng-src="{{vm.userPictureUrl}}" style="width:140px; height: 140px; border-radius: 75px">
+        <img ng-src="{{vm.userPictureUrl}}" class="user-picture">
+        <div class="user-username" >{{vm.username}}</div>
         <li><a ui-sref="state1">TMP-ENROLLMENT</a></li>
         <li><a ui-sref="state2">TMP-CORE</a></li>
         <li><a ui-sref="state3">TMP-STATS</a></li>
