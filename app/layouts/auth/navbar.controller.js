@@ -4,14 +4,15 @@
         .module('myApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['TokenStorage', 'LoginService', 'ApiUrls', 'UserService'];
-    function NavbarController(TokenStorage, LoginService, ApiUrls, UserService) {
+    NavbarController.$inject = ['TokenStorage', 'LoginService', 'ApiUrls', 'UserService', '$state'];
+    function NavbarController(TokenStorage, LoginService, ApiUrls, UserService, $state) {
         var vm = this;
         
         vm.isAuthenticated = TokenStorage.isAuthenticated();
         vm.username = TokenStorage.decode(TokenStorage.retrieve()).username;
         vm.logoutFunction = logoutFunction;
         vm.refreshUserData = refreshUserData;
+        vm.showUserProfile = showUserProfile;
         vm.menuExpanded = true;
 
         refreshUserData();
@@ -24,7 +25,9 @@
             });
         });
         
-        
+        function showUserProfile() {
+            $state.go("userprofile");
+        }
 
         function refreshUserData() {
             UserService.getUser(vm.username).$promise.then(successCallback, failueCallback);

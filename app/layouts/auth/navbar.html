@@ -2,7 +2,7 @@
 <!-- NAVIGATION -->
 <nav class="navbar" ng-class="{'tmp-navbar': vm.menuExpanded, 'collapsed-navbar': !vm.menuExpanded}"  role="navigation">
     <ul class="nav navbar-nav" ng-show="vm.isAuthenticated && vm.menuExpanded">
-        <div class="user-profile">
+        <div class="user-profile" ng-click="vm.showUserProfile()">
             <img ng-src="{{vm.userPictureUrl}}" class="user-picture">
             <div class="user-username" >{{vm.username}}</div>
         </div>
@@ -12,8 +12,11 @@
         <li><a ng-click="vm.menuExpanded = !vm.menuExpanded">EXPAND/COLLAPSE</a></li>
         <li class="logout" ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login">LOGOUT</a></li>
     </ul>
+
     <ul class="nav navbar-nav collapsed-nav" ng-show="vm.isAuthenticated && !vm.menuExpanded">
-        <img ng-src="{{vm.userPictureUrl}}" class="small-user-picture">
+        <div class="user-profile">
+            <img ng-src="{{vm.userPictureUrl}}" class="user-picture">
+        </div>
         <li><a ui-sref="state1"><i class="glyphicon glyphicon-home"></i></a></li>
         <li><a ui-sref="state2"><i class="glyphicon glyphicon-globe"></i></a></li>
         <li><a ui-sref="state3"><i class="glyphicon glyphicon-send"></i></a></li>
