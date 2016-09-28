@@ -39,7 +39,6 @@
         }
 
         function logoutFunction() {
-          //  toastr.success("See you, " + TokenStorage.decode(TokenStorage.retrieve()).username);
             LoginService.logout();
         }
 

@@ -7,8 +7,10 @@
         <li><a ui-sref="state1">TMP-ENROLLMENT</a></li>
         <li><a ui-sref="state2">TMP-CORE</a></li>
         <li><a ui-sref="state3">TMP-STATS</a></li>
-        <li ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login">LOGOUT</a></li>
+        <li class="logout" ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login">LOGOUT</a></li>
     </ul>
 </nav>
 
-<div class="main" ui-view></div>
+<div class="main">
+    <div class="workplace" ui-view></div>
+</div>
