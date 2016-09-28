@@ -4,8 +4,8 @@
         .module('myApp')
         .controller('WelcomeController', WelcomeController);
 
-    WelcomeController.$inject = ['$state', '$timeout', 'ngDialog', 'toastr', 'TokenStorage', 'LoginService', 'RegisterService'];
-    function WelcomeController($state, $timeout, ngDialog, toastr, TokenStorage, LoginService, RegisterService) {
+    WelcomeController.$inject = ['$state', '$timeout', 'ngDialog', 'TokenStorage', 'LoginService', 'RegisterService'];
+    function WelcomeController($state, $timeout, ngDialog, TokenStorage, LoginService, RegisterService) {
         var vm = this;
 
         vm.isAuthenticated = TokenStorage.isAuthenticated();
@@ -51,6 +51,7 @@
 
         function loginFunction() {
             vm.loginFailed = false;
+            
             LoginService.login(vm.login, vm.password)
                 .$promise.then(successCallback, failureCallback);
 
@@ -64,7 +65,7 @@
                 }, 1000);
             }
 
-            function failureCallback(result) {
+            function failureCallback() {
                 vm.loginFailed = true;
             }
         }
@@ -87,7 +88,7 @@
             }
 
             function failureCallback() {
-                toastr.error("Something went wrong, please try again");
+                console.log("Something went wrong, please try again");
             }
 
         }
