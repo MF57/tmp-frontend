@@ -3,6 +3,7 @@
 .navbar.tmp-navbar {
   background-color: $color-jacarta;
   border-radius: 0;
+  border: 0;
   width: $navbarWidth;
   letter-spacing: $letterSpacing;
   height: 100vh;
@@ -38,21 +39,35 @@
     background-color: transparent;
     border-bottom: 2px solid $color-white;
   }
-  .user-picture {
-    width: 140px;
-    height: 140px;
-    -webkit-border-radius:75px;
-    -moz-border-radius:75px;
-    border-radius:75px;
-    margin-top:20px;
-    margin-left: calc((#{$navbarWidth} - 140px)/2);
-  }
-  .user-username {
-    color: $color-white;
-    font-size: 16px;
+
+  .user-profile {
+    margin: 0;
+    width: $navbarWidth;
     text-align: center;
-    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius:10vw;
+    height: 20vw;
+    border: 2px dashed transparent;
+    .user-picture {
+      width: 12vw;
+      height: 12vw;
+      -webkit-border-radius:75px;
+      -moz-border-radius:75px;
+      border-radius:75px;
+      margin-top:2.5vw;
+    }
+    .user-username {
+      color: $color-white;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
+  .user-profile:hover {
+    border: 2px dashed $color-white;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
 }
 .main {
   width: calc(100vw - #{$navbarWidth});
