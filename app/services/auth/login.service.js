@@ -11,7 +11,7 @@
 
     function LoginService ($resource, TokenStorage, ApiUrls) {
         var service = {
-            login: login,
+            login: login, 
             logout: logout
         };
 

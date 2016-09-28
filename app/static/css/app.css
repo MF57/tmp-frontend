@@ -1,3 +1,12 @@
+
+
+/**************************IMPORTS********************************************/
+
+@import "test.css";
+@import "navbar.css";
+
+/*****************************************************************************/
+
 /* app css stylesheet */
 .navbar-inverse a {
   cursor: pointer;
@@ -13,7 +22,7 @@
   width: 200px;
 }
 body {
-  background-color: #ddd;
+  background-color: #754996;
   font-family: "Source Sans Pro", 'Open Sans', sans-serif;
 }
 
