@@ -12,6 +12,7 @@
         vm.username = TokenStorage.decode(TokenStorage.retrieve()).username;
         vm.logoutFunction = logoutFunction;
         vm.refreshUserData = refreshUserData;
+        vm.menuExpanded = true;
 
         refreshUserData();
 
@@ -22,6 +23,8 @@
                 $(this).addClass('active');
             });
         });
+        
+        
 
         function refreshUserData() {
             UserService.getUser(vm.username).$promise.then(successCallback, failueCallback);
