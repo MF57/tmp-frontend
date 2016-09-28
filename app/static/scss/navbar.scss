@@ -1,10 +1,9 @@
 @import "variables";
 
-.navbar.tmp-navbar {
+.navbar {
   background-color: $color-jacarta;
   border-radius: 0;
   border: 0;
-  width: $navbarWidth;
   letter-spacing: $letterSpacing;
   height: 100vh;
   position: fixed;
@@ -18,15 +17,19 @@
     padding-right: 0;
   }
 
-  .nav>li>a:hover, .nav>li>a:focus {
+  .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent;
   }
 
-  .nav>li {
+  .nav > li {
     width: 80%;
     margin-left: 10%;
     border-bottom: 2px solid $color-studio;
     text-align: right;
+  }
+
+  .nav.collapsed-nav > li {
+    text-align: center;
   }
 
   .nav .logout {
@@ -35,26 +38,34 @@
     left: 0;
     margin-bottom: 20px;
   }
-  .nav>li:hover, .nav>li:focus, .nav>li.active {
+  .nav > li:hover, .nav > li:focus, .nav > li.active {
     background-color: transparent;
     border-bottom: 2px solid $color-white;
   }
-
   .user-profile {
     margin: 0;
     width: $navbarWidth;
     text-align: center;
     cursor: pointer;
-    border-radius:10vw;
+    border-radius: 10vw;
     height: 20vw;
     border: 2px dashed transparent;
     .user-picture {
       width: 12vw;
       height: 12vw;
-      -webkit-border-radius:75px;
-      -moz-border-radius:75px;
-      border-radius:75px;
-      margin-top:2.5vw;
+      -webkit-border-radius: 75px;
+      -moz-border-radius: 75px;
+      border-radius: 75px;
+      margin-top: 2.5vw;
+    }
+    .small-user-picture {
+      width: 40px;
+      height: 40px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      margin-top: 20px;
+      margin-left: calc((#{$collapsedNavbarWidth} - 40px) / 2);
     }
     .user-username {
       color: $color-white;
@@ -69,9 +80,16 @@
   }
 
 }
+
+.navbar.tmp-navbar {
+  width: $navbarWidth;
+}
+
+.navbar.collapsed-navbar {
+  width: $collapsedNavbarWidth;
+}
+
 .main {
-  width: calc(100vw - #{$navbarWidth});
-  margin-left: $navbarWidth;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -82,4 +100,14 @@
     height: 95%;
     border: 2px solid $color-white
   }
+}
+
+.main.collapsed-main {
+  width: calc(100vw - #{$navbarWidth});
+  margin-left: $navbarWidth;
+}
+
+.main.expanded-main {
+  width: calc(100vw - #{$collapsedNavbarWidth});
+  margin-left: $collapsedNavbarWidth;
 }
