@@ -3,5 +3,13 @@
     <img ng-src="{{vm.user.pictureURL}}" class="user-picture">
     <div class="user-username">{{vm.user.username}}</div>
 
+    <div class="file-upload btn btn-primary">
+        <span>Upload photo</span>
+        <!-- angular doesn't support binding for file type, so I use own directive -->
+        <input file-model="vm.picture" type="file" id="picture" class="upload">
+    </div>
+
+    <button ng-click="vm.changePicture()" class="btn btn-primary">Change picture</button>
+
 
 </div>
