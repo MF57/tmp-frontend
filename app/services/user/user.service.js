@@ -11,7 +11,8 @@
 
     function UserService ($resource, TokenStorage, ApiUrls) {
         var service = {
-            getUser: getUser
+            getUser: getUser,
+            saveUser: saveUser
         };
 
         var userApiUrl =  `${ApiUrls.authlogApi}applications/${ApiUrls.appId}/users`;
@@ -22,6 +23,18 @@
                     method: 'GET'
                 }
             }).query();
+        }
+        
+        function saveUser(user) {
+            return $resource(`${userApiUrl}/${user.username}`, {}, {
+                'query': {
+                    method: 'PUT'
+                }
+            }).query({
+                mail: user.mail,
+                gender: user.gender,
+                locale: user.locale
+            });
         }
 
         return service;

@@ -87,10 +87,12 @@
   }
   width: $collapsedNavbarWidth;
   .user-profile {
-    height: $collapsedNavbarWidth;
+    height: 50px;
     width: $collapsedNavbarWidth;
     margin-top: 0;
     margin-left: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     .user-picture {
       margin-top: 0;
       width: 40px;
@@ -115,7 +117,8 @@
   .workplace {
     width: 95%;
     height: 95%;
-    border: 2px solid $color-white
+    border: 2px solid $color-white;
+    overflow: auto;
   }
 }
 

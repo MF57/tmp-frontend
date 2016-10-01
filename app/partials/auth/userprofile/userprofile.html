@@ -1,15 +1,33 @@
 <div class="user-profile">
 
-    <img ng-src="{{vm.user.pictureURL}}" class="user-picture">
-    <div class="user-username">{{vm.user.username}}</div>
-
-    <div class="file-upload btn btn-primary">
-        <span>Upload photo</span>
-        <!-- angular doesn't support binding for file type, so I use own directive -->
-        <input file-model="vm.picture" type="file" id="picture" class="upload">
+    <div class="user-picture-wrapper">
+        <img ng-src="{{vm.user.pictureURL}}" class="user-picture">
+        <div class="file-upload btn btn-primary">
+            <span>Upload photo</span>
+            <!-- angular doesn't support binding for file type, so I use own directive -->
+            <input file-model="vm.picture" type="file" id="picture" class="upload">
+        </div>
     </div>
 
-    <button ng-click="vm.changePicture()" class="btn btn-primary">Change picture</button>
+    <div class="input-group">
+        <div class="input-with-label">
+            <label for="username">Username</label>
+            <input ng-model="vm.user.username" class="form-control" id="username" readonly>
+        </div>
+        <div class="input-with-label">
+            <label for="mail">Mail</label>
+            <input ng-model="vm.user.mail" class="form-control" id="mail">
+        </div>
+        <div class="input-with-label">
+            <label for="gender">Gender</label>
+            <input ng-model="vm.user.gender" class="form-control" id="gender">
+        </div>
+        <div class="input-with-label">
+            <label for="locale">Locale</label>
+            <input ng-model="vm.user.locale" class="form-control" id="locale">
+        </div>
+        <button ng-click="vm.saveChanges()" class="btn btn-primary">Save changes</button>
+    </div>
 
 
 </div>

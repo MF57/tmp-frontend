@@ -14,7 +14,7 @@
     </ul>
 
     <ul class="nav navbar-nav collapsed-nav" ng-show="vm.isAuthenticated && !vm.menuExpanded">
-        <div class="user-profile">
+        <div class="user-profile" ng-click="vm.showUserProfile()">
             <img ng-src="{{vm.userPictureUrl}}" class="user-picture">
         </div>
         <li><a ui-sref="state1"><i class="glyphicon glyphicon-home"></i></a></li>

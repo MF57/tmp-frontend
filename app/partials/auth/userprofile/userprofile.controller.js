@@ -7,13 +7,13 @@
         .module('myApp')
         .controller('UserProfileController', UserProfileController);
 
-    UserProfileController.$inject = ['$http', 'ApiUrls', 'TokenStorage', 'UserService', '$scope'];
-    function UserProfileController($http, ApiUrls, TokenStorage, UserService, $scope) {
+    UserProfileController.$inject = ['$http', 'ApiUrls', 'TokenStorage', 'UserService', '$scope', '$window'];
+    function UserProfileController($http, ApiUrls, TokenStorage, UserService, $scope, $window) {
         var vm = this;
         
         vm.picture = {};
         vm.refreshUserData = refreshUserData;
-        vm.changePicture = changePicture;
+        vm.saveChanges = saveChanges;
         vm.uploadPicture = uploadPicture;
 
         refreshUserData();
@@ -33,10 +33,9 @@
             }
         }
 
-        function changePicture() {
+        function saveChanges() {
             var form = new FormData();
             form.append("file", vm.picture);
-            console.log(vm.picture);
             var username = TokenStorage.decode(TokenStorage.retrieve()).username;
             $http.post(`${ApiUrls.authlogApi}applications/${ApiUrls.appId}/users/${username}/photo`,
                 form, {
@@ -44,11 +43,19 @@
                     headers: {'Content-Type': undefined}
                 }).then(
                 function successCallback(result) {
-                    console.log("Picture changed")
+                    UserService.saveUser(vm.user)
+                        .$promise.then(successCallback, failureCallback);
+                    function successCallback(result) {
+                        $window.location.reload();
+                    }
+                    function failureCallback(result) {
+                        console.log("Can't update user.")
+                    }
                 },
                 function failureCallback(result) {
                     console.log("Error during changing picture");
                 });
+
         }
         
         function refreshUserData() {

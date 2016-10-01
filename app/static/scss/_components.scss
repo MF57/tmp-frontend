@@ -1,0 +1,24 @@
+@import "variables";
+
+
+@mixin input-label() {
+  width:100%;
+  text-align: left;
+  color: $color-jacarta;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+@mixin input-text() {
+  border-radius: 0;
+  border: 2px solid $color-jacarta;
+  color: $color-white;
+  background-color: $color-affair;
+}
+@mixin btn-primary() {
+  border-radius: 0;
+  background-color: $color-victoria;
+  border: 0;
+}
+@mixin btn-primary-hover() {
+  background-color: $color-jacarta;
+}
