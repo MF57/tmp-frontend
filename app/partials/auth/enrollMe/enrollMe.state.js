@@ -11,10 +11,10 @@
     function StateConfig($stateProvider) {
 
         $stateProvider
-            .state('state3', {
-                url:"/state3",
-                templateUrl: "partials/auth/view3/view3.html",
-                controller: "View3Ctrl",
+            .state('EnrollMe', {
+                url:"/enroll-me",
+                templateUrl: "partials/auth/enrollMe/enrollMe.html",
+                controller: "EnrollMeCtrl",
                 controllerAs: "vm",
                 parent:"main"
             })

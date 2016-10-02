@@ -2,10 +2,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('View2Ctrl', View2Controller);
+        .controller('TournamentCreatorCtrl', TournamentCreatorController);
 
-    View2Controller.$inject = ['$http', 'ApiUrls'];
-    function View2Controller($http, ApiUrls) {
+    TournamentCreatorController.$inject = ['$http', 'ApiUrls'];
+    function TournamentCreatorController($http, ApiUrls) {
         var vm = this;
         vm.message = "";
         vm.refresh = refresh;
