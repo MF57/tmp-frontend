@@ -61,7 +61,7 @@
                 $timeout(function () {
                     ngDialog.close();
                     vm.loginSuccessful = false;
-                    $state.go("state1");
+                    $state.go("Dashboard");
                 }, 1000);
             }
 

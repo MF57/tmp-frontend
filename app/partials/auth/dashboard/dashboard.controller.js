@@ -2,10 +2,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('View1Ctrl', View1Controller);
+        .controller('DashboardCtrl', DashboardController);
 
-    View1Controller.$inject = ['$http', 'ApiUrls', 'TokenStorage'];
-    function View1Controller($http, ApiUrls, TokenStorage) {
+    DashboardController.$inject = ['$http', 'ApiUrls'];
+    function DashboardController($http, ApiUrls) {
         var vm = this;
         vm.message = "";
         vm.refresh = refresh;

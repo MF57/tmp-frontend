@@ -7,9 +7,9 @@
             <div class="user-username" >{{vm.username}}</div>
         </div>
         <li><a ui-sref="tournamentcreator">Create tournament</a></li>
-        <li><a ui-sref="state1">TMP-ENROLLMENT</a></li>
-        <li><a ui-sref="state2">TMP-CORE</a></li>
-        <li><a ui-sref="state3">TMP-STATS</a></li>
+        <li><a ui-sref="Dashboard">DASHBOARD</a></li>
+        <li><a ui-sref="TournamentCreator">TOURNAMENT CREATOR</a></li>
+        <li><a ui-sref="EnrollMe">ENROLL ME</a></li>
         <li><a ng-click="vm.menuExpanded = !vm.menuExpanded">EXPAND/COLLAPSE</a></li>
         <li class="logout" ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()"><a ui-sref="login">LOGOUT</a></li>
     </ul>
@@ -19,9 +19,9 @@
             <img ng-src="{{vm.userPictureUrl}}" class="user-picture">
         </div>
         <li><a ui-sref="tournamentcreator"><i class="glyphicon glyphicon-plus"></i></a></li>
-        <li><a ui-sref="state1"><i class="glyphicon glyphicon-home"></i></a></li>
-        <li><a ui-sref="state2"><i class="glyphicon glyphicon-globe"></i></a></li>
-        <li><a ui-sref="state3"><i class="glyphicon glyphicon-send"></i></a></li>
+        <li><a ui-sref="Dashboard"><i class="glyphicon glyphicon-home"></i></a></li>
+        <li><a ui-sref="TournamentCreator"><i class="glyphicon glyphicon-plus"></i></a></li>
+        <li><a ui-sref="EnrollMe"><i class="glyphicon glyphicon-check"></i></a></li>
         <li><a ng-click="vm.menuExpanded = !vm.menuExpanded"><i class="glyphicon glyphicon-resize-horizontal"></i></a></li>
         <li class="logout" ng-show="vm.isAuthenticated" ng-click="vm.logoutFunction()">
             <a ui-sref="login"><i class="glyphicon glyphicon-off"></i>

@@ -2,10 +2,10 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('View3Ctrl', View3Controller);
+        .controller('EnrollMeCtrl', EnrollMeController);
 
-    View3Controller.$inject = ['$http', 'ApiUrls'];
-    function View3Controller($http, ApiUrls) {
+    EnrollMeController.$inject = ['$http', 'ApiUrls'];
+    function EnrollMeController($http, ApiUrls) {
         var vm = this;
         vm.message = "";
         vm.refresh = refresh;
