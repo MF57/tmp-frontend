@@ -1,5 +1,5 @@
 /**
- * Created by Szymek on 02/10/2016.
+ * Created by mf57 on 04.09.2016.
  */
 (function () {
     'use strict';
@@ -9,11 +9,12 @@
 
     StateConfig.$inject = ['$stateProvider'];
     function StateConfig($stateProvider) {
+
         $stateProvider
-            .state('tournamentcreator', {
-                url:"/tournamentcreator",
-                templateUrl: "partials/auth/tournamentcreator/tournamentcreator.html",
-                controller: "TournamentCreatorController",
+            .state('TournamentCreator', {
+                url:"/creator",
+                templateUrl: "partials/auth/tournamentCreator/tournamentCreator.html",
+                controller: "TournamentCreatorCtrl",
                 controllerAs: "vm",
                 parent:"main"
             })

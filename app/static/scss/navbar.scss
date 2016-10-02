@@ -117,7 +117,7 @@
   .workplace {
     width: 95%;
     height: 95%;
-    border: 2px solid $color-white;
+    border: $workspaceBorder solid $color-white;
     overflow: auto;
   }
 }
