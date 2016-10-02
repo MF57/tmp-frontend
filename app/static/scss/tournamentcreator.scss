@@ -1,0 +1,46 @@
+
+@import "variables";
+
+.tmp-creator {
+
+  width: 100%;
+  background-color: red;
+
+  .tmp-navbar {
+    float:left;
+    width: 10%;
+    padding:0;
+    margin:0;
+    background-color: blue;
+    height: 100vh;
+    vertical-align: middle;
+
+    li {
+      color: $color-white;
+      list-style-type: none;
+      .title {
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+      }
+      .subtitle {
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .tmp-content {
+    float:left;
+    width: 90%;
+    padding: 0;
+    margin:0;
+    background-color: green;
+    li {
+      list-style-type: none;
+
+    }
+  }
+
+}
