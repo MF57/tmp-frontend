@@ -1,0 +1,56 @@
+
+@import "variables";
+
+.tmp-creator {
+
+  width: 100%;
+  background-color: red;
+
+  .tmp-navbar {
+    width: 10%;
+    padding:0;
+    margin:0;
+    background-color: blue;
+    vertical-align: middle;
+    display: inline-block;
+    float:left;
+
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      height: calc(95vh - 2 * #{$workspaceBorder} );
+      width:100%;
+    }
+
+    li {
+      color: $color-white;
+      list-style-type: none;
+      width: 100%;
+      .title {
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+      }
+      .subtitle {
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .tmp-content {
+    width: 90%;
+    padding: 0;
+    display: inline-block;
+    float: left;
+    margin:0;
+    height: 100%;
+    background-color: green;
+    li {
+      list-style-type: none;
+
+    }
+  }
+
+}
