@@ -4,32 +4,33 @@
 .tmp-creator {
 
   width: 100%;
-  background-color: red;
+  height: 100%;
+  overflow: hidden;
+
 
   .tmp-navbar {
-    width: 10%;
+    width: 150px;
     padding:0;
     margin:0;
-    background-color: blue;
-    vertical-align: middle;
-    display: inline-block;
     float:left;
+    position: absolute;
 
     > div {
       display: table-cell;
       vertical-align: middle;
       height: calc(95vh - 2 * #{$workspaceBorder} );
-      width:100%;
+      width:150px;
     }
 
     li {
-      color: $color-white;
+      color: $color-victoria;
       list-style-type: none;
-      width: 100%;
+      width: $creatorNavbarWidth;
+      margin-bottom:50px;
+      cursor: pointer;
       .title {
         font-size: 32px;
         text-align: center;
-        width: 100%;
       }
       .subtitle {
         font-size: 10px;
@@ -37,18 +38,22 @@
       }
     }
 
+    li.active {
+      color: $color-tapestry;
+    }
+
   }
 
   .tmp-content {
-    width: 90%;
+    width: calc(100% - #{$creatorNavbarWidth});
     padding: 0;
     display: inline-block;
     float: left;
-    margin:0;
-    height: 100%;
-    background-color: green;
+    margin: 0 0 0 $creatorNavbarWidth;
+    height: 400%;
     li {
       list-style-type: none;
+      height: 25%;
 
     }
   }

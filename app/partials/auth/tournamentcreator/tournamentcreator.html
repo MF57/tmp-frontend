@@ -1,20 +1,20 @@
-<div class="tmp-creator">
+<div class="tmp-creator" id="tmp-creator">
 
     <ul class="tmp-navbar">
         <div>
-            <li>
+            <li ng-click="vm.scrollTo(1)">
                 <div class="title">1</div>
                 <div class="subtitle">Basic information</div>
             </li>
-            <li>
+            <li ng-click="vm.scrollTo(2)">
                 <div class="title">2</div>
                 <div class="subtitle">Discipline & strategy</div>
             </li>
-            <li>
+            <li ng-click="vm.scrollTo(3)">
                 <div class="title">3</div>
                 <div class="subtitle">Data</div>
             </li>
-            <li>
+            <li ng-click="vm.scrollTo(4)">
                 <div class="title">4</div>
                 <div class="subtitle">Summary</div>
             </li>
@@ -22,8 +22,11 @@
 
     </ul>
 
-    <ul class="tmp-content">
-        coś tam
+    <ul class="tmp-content" id="tmp-creator-content">
+        <li>Basic info</li>
+        <li>Disciptine & strategy</li>
+        <li>Dates</li>
+        <li>Summary</li>
     </ul>
 
 </div>

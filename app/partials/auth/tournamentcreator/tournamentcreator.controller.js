@@ -7,16 +7,23 @@
     TournamentCreatorController.$inject = ['$http', 'ApiUrls'];
     function TournamentCreatorController($http, ApiUrls) {
         var vm = this;
-        vm.message = "";
-        vm.refresh = refresh;
 
-        function refresh() {
-            $http.get(ApiUrls.coreApi + "tests").success(function (response) {
-                vm.message = response;
-            }).error(function () {
-                vm.message = "Could not connect to TMP-Core"
-            });
+        vm.scrollTo = scrollTo;
+
+        function scrollTo(elementNumber) {
+            $("#tmp-creator").scrollTo(($("#tmp-creator-content").find("> li:nth-child("+ elementNumber +")")), 1000)
         }
+
+
+        $(document).ready(function () {
+            $('ul.tmp-navbar > div > li').click(function (e) {
+                e.preventDefault();
+                $('ul.tmp-navbar > div > li').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+
+
     }
 
 })();
