@@ -4,7 +4,7 @@ describe('myApp.enrollMe module', function() {
 
   beforeEach(module('myApp.enrollMe'));
 
-  describe('tournamentCreator22 controller', function(){
+  describe('tournamentCreator controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body

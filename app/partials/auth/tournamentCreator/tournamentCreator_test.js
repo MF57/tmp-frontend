@@ -1,10 +1,10 @@
 'use strict';
 
-describe('myApp.tournamentCreator22 module', function() {
+describe('myApp.tournamentCreator module', function() {
 
-  beforeEach(module('myApp.tournamentCreator22'));
+  beforeEach(module('myApp.tournamentCreator'));
 
-  describe('tournamentCreator22 controller', function(){
+  describe('tournamentCreator controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
