@@ -32,9 +32,6 @@
   .btn-primary {
     @include btn-primary;
   }
-  .btn-primary:hover {
-    @include btn-primary-hover;
-  }
 
   .input-group {
     width: 40vh;
