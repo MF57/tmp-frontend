@@ -30,5 +30,5 @@
 </nav>
 
 <div ng-class="{'collapsed-main': vm.menuExpanded, 'expanded-main': !vm.menuExpanded}" class="main">
-    <div class="workplace" ui-view></div>
+    <div ng-class="{'workspace-border': vm.workspaceBorder}" class="workplace" ui-view></div>
 </div>
