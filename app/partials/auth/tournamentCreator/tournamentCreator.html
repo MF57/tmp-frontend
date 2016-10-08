@@ -1,0 +1,83 @@
+<div class="tmp-creator" id="tmp-creator">
+
+    <ul class="tmp-navbar">
+        <div>
+            <li ng-click="vm.scrollTo(1)" class="active">
+                <div class="title">1</div>
+                <div class="subtitle">Basic information</div>
+            </li>
+            <li ng-click="vm.scrollTo(2)">
+                <div class="title">2</div>
+                <div class="subtitle">Discipline & strategy</div>
+            </li>
+            <li ng-click="vm.scrollTo(3)">
+                <div class="title">3</div>
+                <div class="subtitle">Data</div>
+            </li>
+            <li ng-click="vm.scrollTo(4)">
+                <div class="title">4</div>
+                <div class="subtitle">Summary</div>
+            </li>
+        </div>
+
+    </ul>
+
+    <ul class="tmp-content" id="tmp-creator-content">
+        <li>
+            <div class="input-group">
+                <div class="input-with-label">
+                    <label for="tournament-name">Tournament name</label>
+                    <input type="text" id="tournament-name">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-description">Tournament description</label>
+                    <textarea id="tournament-description"></textarea>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <div class="input-with-label">
+                    <label for="tournament-discipline">Tournament discipline</label>
+                    <select id="tournament-discipline">
+                        <option>Volleyball</option>
+                        <option>Beach Volleyball</option>
+                        <option>Soccer</option>
+                        <option>Hokey</option>
+                    </select>
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-strategy">Tournament strategy</label>
+                    <select id="tournament-strategy">
+                        <option>Single elimination</option>
+                        <option>Double elimination</option>
+                        <option>Round robin</option>
+                        <option>League</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <div class="input-with-label">
+                    <label for="tournament-start-date">Start date</label>
+                    <input type="date" id="tournament-start-date">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-start-time">Start time</label>
+                    <input type="time" id="tournament-start-time">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-end-date">End date</label>
+                    <input type="date" id="tournament-end-date">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-end-time">End time</label>
+                    <input type="time" id="tournament-end-time">
+                </div>
+            </div>
+        </li>
+        <li>Summary</li>
+    </ul>
+
+</div>
