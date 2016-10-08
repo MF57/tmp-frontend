@@ -4,20 +4,19 @@
         .module('myApp')
         .controller('DashboardCtrl', DashboardController);
 
-    DashboardController.$inject = ['$http', 'ApiUrls'];
-    function DashboardController($http, ApiUrls) {
+    DashboardController.$inject = ['Dashboard'];
+    function DashboardController(Dashboard) {
         var vm = this;
-        vm.message = "";
-        vm.refresh = refresh;
+        vm.ownerTournaments = [];
+        vm.refereeTournaments = [];
+        vm.participantTournaments = [];
 
 
-        function refresh() {
-            $http.get(ApiUrls.enrollmentApi + "tests").success(function (response) {
-                vm.message = response;
-            }).error(function () {
-                vm.message = "Could not connect to TMP-Enrollment"
-            });
-        }
+        vm.loadAll = function() {
+
+        };
+
+        vm.loadAll();
     }
 
 })();

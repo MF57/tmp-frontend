@@ -5,15 +5,20 @@
 
 describe('myApp.navbar module', function() {
 
-    beforeEach(module('myApp.navbar'));
+    var $rootScope, $scope, $controller,navbarController;
 
-    describe('navbar controller', function(){
 
-        it('should ....', inject(function($controller) {
-            //spec body
-            var navbarCtrl = $controller('NavbarController');
-            expect(navbarCtrl).toBeDefined();
-        }));
+    beforeEach(module('myApp'));
 
+    beforeEach(inject(function(_$rootScope_, _$controller_){
+        $rootScope = _$rootScope_;
+        $scope = $rootScope.$new();
+        $controller = _$controller_;
+
+        navbarController = $controller('NavbarController', {'$rootScope' : $rootScope, '$scope': $scope});
+    }));
+
+    it('should exist', function() {
+        expect(navbarController).toBeDefined();
     });
 });
