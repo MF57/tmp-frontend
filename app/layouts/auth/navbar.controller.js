@@ -14,7 +14,7 @@
         vm.refreshUserData = refreshUserData;
         vm.showUserProfile = showUserProfile;
         vm.menuExpanded = true;
-        vm.workspaceBorder = true;
+        vm.workspaceBorder = false;
 
         refreshUserData();
 
