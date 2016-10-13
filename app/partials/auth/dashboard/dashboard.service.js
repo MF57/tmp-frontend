@@ -10,7 +10,16 @@
 
     DashboardService.$inject = ['ApiUrls', '$resource'];
     function DashboardService(ApiUrls, $resource) {
-        var resourceUrl = ApiUrls.enrollmentApi + ""
+        var resourceUrl = ApiUrls.enrollmentApi + "";
+        var service = {
+            loadAll: loadAll
+        };
+
+        function loadAll() {
+            return ["LOL"]
+        }
+
+        return service;
 
     }
     

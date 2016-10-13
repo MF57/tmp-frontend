@@ -1,12 +1,33 @@
     <div class="row text-center">
         <div class="col-md-4">
             <div class="section-header">Tournaments Owner Section</div>
+            <div class="no-tournaments" ng-hide="vm.ownerTournaments.length == 0">
+                <div ui-sref="TournamentCreator" class="encouragement">
+                    <div><i class="icon glyphicon glyphicon-plus"></i></div>
+                    <div>CREATE YOUR FIRST TOURNAMENT</div>
+                </div>
+                <div class="image image-stadium"></div>
+            </div>
         </div>
         <div class="col-md-4">
             <div class="section-header box-shadow">Tournaments Referee Section</div>
+            <div class="no-tournaments" ng-show="vm.participantTournaments.length == 0">
+                <div class="encouragement">
+                    <div><i class="icon glyphicon glyphicon-eye-close"></i></div>
+                    <div>YOU ARE NOT A REFEREE IN ANY TOURNAMENT</div>
+                </div>
+                <div class="image image-beach"></div>
+            </div>
         </div>
         <div class="col-md-4">
             <div class="section-header">Tournaments Participant Section</div>
+            <div class="no-tournaments" ng-show="vm.participantTournaments.length == 0">
+                <div ui-sref="EnrollMe" class="encouragement">
+                    <div><i class="icon glyphicon glyphicon-check"></i></div>
+                    <div>ENROLL TO YOUR FIRST TOURNAMENT</div>
+                </div>
+                <div class="image image-tennis"></div>
+            </div>
         </div>
 
     </div>

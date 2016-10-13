@@ -3,11 +3,55 @@
 .section-header {
   background-color: $color-jacarta;
   color: $color-white;
-  margin: 20px 5px;
+  margin: 20px 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   letter-spacing: $letterSpacing;
+
+}
+
+.no-tournaments {
+  .image {
+    height: 43vh;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .image-stadium {
+    background-image: url('../images/stadium2.jpg');
+
+  }
+
+  .image-tennis {
+    background-image: url('../images/tenis2.jpg');
+  }
+
+  .image-beach {
+    background-image: url('../images/beach.jpg');
+  }
+
+  .encouragement {
+    height: 40vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px 0;
+    color: $color-white;
+    background-color: $color-jacarta;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: $letterSpacing;
+    font-size: 16px;
+
+    .icon {
+      font-size: 120px;
+      margin-bottom: 20px;
+    }
+
+
+  }
+
 
 }

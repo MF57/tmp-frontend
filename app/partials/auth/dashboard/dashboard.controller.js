@@ -13,7 +13,7 @@
 
 
         vm.loadAll = function() {
-
+            vm.ownerTournaments = Dashboard.loadAll();
         };
 
         vm.loadAll();
