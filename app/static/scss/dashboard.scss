@@ -12,30 +12,31 @@
 
 }
 
+.image {
+  height: 41vh;
+  background-size: cover;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+}
+
+.image-stadium {
+  background-image: url('../images/stadium2.jpg');
+
+}
+
+.image-tennis {
+  background-image: url('../images/tenis2.jpg');
+}
+
+.image-beach {
+  background-image: url('../images/beach.jpg');
+}
+
 .no-tournaments {
-  .image {
-    height: 43vh;
-    background-size: cover;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-
-  .image-stadium {
-    background-image: url('../images/stadium2.jpg');
-
-  }
-
-  .image-tennis {
-    background-image: url('../images/tenis2.jpg');
-  }
-
-  .image-beach {
-    background-image: url('../images/beach.jpg');
-  }
 
   .encouragement {
-    height: 40vh;
+    height: 41vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 20px 0;
     color: $color-white;
     background-color: $color-jacarta;
     cursor: pointer;
@@ -50,8 +51,36 @@
       margin-bottom: 20px;
     }
 
-
   }
 
+}
+
+.tournaments-wrapper {
+  height: 41vh;
+
+  .tournament {
+    height: 120px;
+    cursor: pointer;
+    background-color: $color-jacarta;
+    color: $color-white;
+    letter-spacing: $letterSpacing;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+  }
+}
+
+.tournaments-wrapper-full {
+  height: 82vh;
+  overflow: scroll;
+
+  .tournament {
+    height: 120px;
+    cursor: pointer;
+    background-color: $color-jacarta;
+    color: $color-white;
+    letter-spacing: $letterSpacing;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+  }
 
 }

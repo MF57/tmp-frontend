@@ -1,23 +1,36 @@
     <div class="row text-center">
         <div class="col-md-4">
             <div class="section-header">Tournaments Owner Section</div>
-            <div class="no-tournaments" ng-hide="vm.ownerTournaments.length == 0">
+            <div class="no-tournaments" ng-show="vm.ownerTournaments.length == 0">
                 <div ui-sref="TournamentCreator" class="encouragement">
                     <div><i class="icon glyphicon glyphicon-plus"></i></div>
                     <div>CREATE YOUR FIRST TOURNAMENT</div>
                 </div>
-                <div class="image image-stadium"></div>
             </div>
+            <div ng-class="{'tournaments-wrapper': vm.ownerTournaments.length <= 3,
+             'tournaments-wrapper-full': vm.ownerTournaments.length > 3}"
+                 ng-hide="vm.ownerTournaments.length == 0">
+                <div class="tournament" ng-repeat="tournament in vm.ownerTournaments">
+                    {{tournament}}
+                </div>
+            </div>
+            <div ng-hide="vm.ownerTournaments.length > 3" class="image image-stadium"></div>
         </div>
         <div class="col-md-4">
             <div class="section-header box-shadow">Tournaments Referee Section</div>
-            <div class="no-tournaments" ng-show="vm.participantTournaments.length == 0">
+            <div class="no-tournaments" ng-show="vm.refereeTournaments.length == 0">
                 <div class="encouragement">
                     <div><i class="icon glyphicon glyphicon-eye-close"></i></div>
                     <div>YOU ARE NOT A REFEREE IN ANY TOURNAMENT</div>
                 </div>
-                <div class="image image-beach"></div>
             </div>
+            <div ng-class="{'tournaments-wrapper': vm.refereeTournaments.length <= 3,
+             'tournaments-wrapper-full': vm.refereeTournaments.length > 3}" ng-hide="vm.refereeTournaments.length == 0">
+                <div class="tournament" ng-repeat="tournament in vm.refereeTournaments">
+                    {{tournament}}
+                </div>
+            </div>
+            <div ng-hide="vm.refereeTournaments.length > 3" class="image image-beach"></div>
         </div>
         <div class="col-md-4">
             <div class="section-header">Tournaments Participant Section</div>
@@ -26,8 +39,14 @@
                     <div><i class="icon glyphicon glyphicon-check"></i></div>
                     <div>ENROLL TO YOUR FIRST TOURNAMENT</div>
                 </div>
-                <div class="image image-tennis"></div>
             </div>
+            <div ng-class="{'tournaments-wrapper': vm.participantTournaments.length <= 3,
+             'tournaments-wrapper-full': vm.participantTournaments.length > 3}" ng-hide="vm.participantTournaments.length == 0">
+                <div class="tournament" ng-repeat="tournament in vm.participantTournaments">
+                    {{tournament}}
+                </div>
+            </div>
+            <div ng-hide="vm.participantTournaments.length > 3" class="image image-tennis"></div>
         </div>
 
     </div>

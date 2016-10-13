@@ -8,7 +8,7 @@
     function DashboardController(Dashboard) {
         var vm = this;
         vm.ownerTournaments = [];
-        vm.refereeTournaments = [];
+        vm.refereeTournaments = ['asd', 'fsd', 'agfd'];
         vm.participantTournaments = [];
 
 
