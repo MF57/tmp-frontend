@@ -16,7 +16,7 @@
         };
 
         function loadAll() {
-            return ["LOL"]
+            return ["Tournament1", "Tournament2", "Tournament3", "Tournament4"]
         }
 
         return service;
