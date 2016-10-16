@@ -9,11 +9,14 @@
         var vm = this;
         vm.ownerTournaments = [];
         vm.refereeTournaments = [];
-        vm.participantTournaments = ['Champions League'];
+        vm.participantTournaments = [];
 
 
         vm.loadAll = function() {
-            vm.ownerTournaments = Dashboard.loadAll();
+            var data = Dashboard.loadAll();
+            vm.ownerTournaments = data.ownerTournaments;
+            vm.refereeTournaments = data.refereeTournaments;
+            vm.participantTournaments = data.participantTournaments;
         };
 
         vm.loadAll();

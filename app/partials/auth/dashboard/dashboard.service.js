@@ -16,7 +16,11 @@
         };
 
         function loadAll() {
-            return ["Tournament1", "Tournament2", "Tournament3", "Tournament4"]
+            var tournaments = {};
+            tournaments.ownerTournaments = [];
+            tournaments.refereeTournaments = [];
+            tournaments.participantTournaments = [];
+            return tournaments;
         }
 
         return service;
