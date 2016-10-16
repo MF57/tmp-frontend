@@ -55,9 +55,7 @@
 
 }
 
-.tournaments-wrapper {
-  height: 40vh;
-
+.tournaments-wrapper, .tournaments-wrapper-full {
   .tournament {
     height: 12vh;
     cursor: pointer;
@@ -66,22 +64,29 @@
     letter-spacing: $letterSpacing;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 2vh;
+
+    .tournament-top-section {
+      height: 6vh;
+      border-bottom: 2px solid $color-studio;
+      display: flex;
+      align-items: center;
+      font-size: 1.5vw;
+
+      .tournament-title {
+        margin-left: 1vw;
+        width: 85%;
+      }
+    }
   }
+}
+
+.tournaments-wrapper {
+  height: 40vh;
 }
 
 .tournaments-wrapper-full {
   height: 85vh;
   overflow-y: scroll;
   overflow-x: hidden;
-
-  .tournament {
-    height: 12vh;
-    cursor: pointer;
-    background-color: $color-jacarta;
-    color: $color-white;
-    letter-spacing: $letterSpacing;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 2vh;
-  }
 
 }
