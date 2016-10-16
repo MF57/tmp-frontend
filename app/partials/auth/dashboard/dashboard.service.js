@@ -17,9 +17,9 @@
 
         function loadAll() {
             var tournaments = {};
-            tournaments.ownerTournaments = [];
+            tournaments.ownerTournaments = ['Tournament 1', 'Tournament2', 'Tournament3', 'Tournament 4', 'Tournament5', 'Tournament6', 'Tournament7'];
             tournaments.refereeTournaments = [];
-            tournaments.participantTournaments = [];
+            tournaments.participantTournaments = ['Tournament 1', 'Tournament2', 'Tournament3'];
             return tournaments;
         }
 

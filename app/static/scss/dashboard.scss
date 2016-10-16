@@ -3,20 +3,20 @@
 .section-header {
   background-color: $color-jacarta;
   color: $color-white;
-  margin: 20px 0;
+  margin: 2vh 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 1vw;
   letter-spacing: $letterSpacing;
 
 }
 
 .image {
-  height: 41vh;
+  height: 40vh;
   background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-top: 20px;
+  margin-top: 2vh;
 }
 
 .image-stadium {
@@ -35,7 +35,7 @@
 .no-tournaments {
 
   .encouragement {
-    height: 41vh;
+    height: 40vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: $color-white;
     background-color: $color-jacarta;
@@ -44,11 +44,11 @@
     flex-direction: column;
     justify-content: center;
     letter-spacing: $letterSpacing;
-    font-size: 16px;
+    font-size: 1vw;
 
     .icon {
-      font-size: 120px;
-      margin-bottom: 20px;
+      font-size: 10vh;
+      margin-bottom: 2vh;
     }
 
   }
@@ -56,31 +56,32 @@
 }
 
 .tournaments-wrapper {
-  height: 41vh;
+  height: 40vh;
 
   .tournament {
-    height: 120px;
+    height: 12vh;
     cursor: pointer;
     background-color: $color-jacarta;
     color: $color-white;
     letter-spacing: $letterSpacing;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
   }
 }
 
 .tournaments-wrapper-full {
-  height: 82vh;
-  overflow: scroll;
+  height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   .tournament {
-    height: 120px;
+    height: 12vh;
     cursor: pointer;
     background-color: $color-jacarta;
     color: $color-white;
     letter-spacing: $letterSpacing;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
   }
 
 }
