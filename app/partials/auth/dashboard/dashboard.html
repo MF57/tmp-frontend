@@ -7,32 +7,35 @@
                     <div>CREATE YOUR FIRST TOURNAMENT</div>
                 </div>
             </div>
+
             <div ng-class="{'tournaments-wrapper': vm.ownerTournaments.length <= 3,
              'tournaments-wrapper-full': vm.ownerTournaments.length > 3}"
                  ng-hide="vm.ownerTournaments.length == 0">
-                <div class="text-left tournament" ng-repeat="tournament in vm.ownerTournaments">
+                <div ng-click='vm.goToTournament(tournament)' class="text-left tournament" ng-repeat="tournament in vm.ownerTournaments">
                     <div class="tournament-top-section">
-                        <div class="tournament-title">Champions League</div>
+                        <div class="tournament-title">{{tournament.name}}</div>
                         <i class="glyphicon glyphicon-plane"></i>
                     </div>
                     <div class="tournament-bottom-section">
                         <div class="tournament-info-section tournament-status">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                            ENROLLMENT
+                            {{tournament.status}}
                         </div>
                         <div class="tournament-info-section tournament-date">
                             <i class="glyphicon glyphicon-calendar"></i>
-                            2016-07-11 18:00
+                            {{tournament.beginDate}}
                         </div>
                         <div class="tournament-info-section tournament-level">
                             <i class="glyphicon glyphicon-flash"></i>
-                            UBERS
+                            {{tournament.level}}
                         </div>
                     </div>
                 </div>
             </div>
             <div ng-hide="vm.ownerTournaments.length > 3" class="image image-stadium"></div>
         </div>
+
+
         <div class="col-md-4">
             <div class="section-header box-shadow">TOURNAMENTS REFEREE SECTION</div>
             <div class="no-tournaments" ng-show="vm.refereeTournaments.length == 0">
@@ -41,17 +44,34 @@
                     <div>YOU ARE NOT A REFEREE IN ANY TOURNAMENT</div>
                 </div>
             </div>
+
             <div ng-class="{'tournaments-wrapper': vm.refereeTournaments.length <= 3,
              'tournaments-wrapper-full': vm.refereeTournaments.length > 3}" ng-hide="vm.refereeTournaments.length == 0">
                 <div class="text-left tournament" ng-repeat="tournament in vm.refereeTournaments">
                     <div class="tournament-top-section">
-                        <div class="tournament-title">Champions League</div>
+                        <div class="tournament-title">{{tournament.name}}</div>
                         <i class="glyphicon glyphicon-plane"></i>
+                    </div>
+                    <div class="tournament-bottom-section">
+                        <div class="tournament-info-section tournament-status">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            {{tournament.status}}
+                        </div>
+                        <div class="tournament-info-section tournament-date">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            {{tournament.beginDate}}
+                        </div>
+                        <div class="tournament-info-section tournament-level">
+                            <i class="glyphicon glyphicon-flash"></i>
+                            {{tournament.level}}
+                        </div>
                     </div>
                 </div>
             </div>
             <div ng-hide="vm.refereeTournaments.length > 3" class="image image-beach"></div>
         </div>
+
+
         <div class="col-md-4">
             <div class="section-header">TOURNAMENTS PARTICIPANT SECTION</div>
             <div class="no-tournaments" ng-show="vm.participantTournaments.length == 0">
@@ -60,12 +80,27 @@
                     <div>ENROLL TO YOUR FIRST TOURNAMENT</div>
                 </div>
             </div>
+
             <div ng-class="{'tournaments-wrapper': vm.participantTournaments.length <= 3,
              'tournaments-wrapper-full': vm.participantTournaments.length > 3}" ng-hide="vm.participantTournaments.length == 0">
                 <div class="text-left tournament" ng-repeat="tournament in vm.participantTournaments">
                     <div class="tournament-top-section">
-                        <div class="tournament-title">Champions League</div>
+                        <div class="tournament-title">{{tournament.name}}</div>
                         <i class="glyphicon glyphicon-plane"></i>
+                    </div>
+                    <div class="tournament-bottom-section">
+                        <div class="tournament-info-section tournament-status">
+                            <i class="glyphicon glyphicon-info-sign"></i>
+                            {{tournament.status}}
+                        </div>
+                        <div class="tournament-info-section tournament-date">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            {{tournament.beginDate}}
+                        </div>
+                        <div class="tournament-info-section tournament-level">
+                            <i class="glyphicon glyphicon-flash"></i>
+                            {{tournament.level}}
+                        </div>
                     </div>
                 </div>
             </div>
