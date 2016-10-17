@@ -13,7 +13,7 @@
 
         $stateProvider
             .state('Tournament', {
-                url:"/tournament",
+                url:"/tournament/{tournamentId}",
                 templateUrl: "partials/auth/tournament/tournament.html",
                 controller: "TournamentCtrl",
                 controllerAs: "vm",

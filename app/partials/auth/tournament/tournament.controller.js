@@ -7,14 +7,14 @@
         .module('myApp')
         .controller('TournamentCtrl', TournamentController);
 
-    TournamentController.$inject = ['$stateParams'];
-    function TournamentController($stateParams) {
+    TournamentController.$inject = ['$stateParams', 'TokenStorage', 'Tournament'];
+    function TournamentController($stateParams, TokenStorage, Tournament) {
         var vm = this;
-        vm.tournamentId = '';
+        vm.tournament = {};
 
         function loadAll() {
-            vm.tournamentId = $stateParams.tournamentId;
-
+            vm.tournament = Tournament
+                .loadAll($stateParams.tournamentId, TokenStorage.decode(TokenStorage.retrieve()).username);
         }
 
         loadAll();
