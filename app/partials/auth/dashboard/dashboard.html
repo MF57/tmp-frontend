@@ -47,7 +47,7 @@
 
             <div ng-class="{'tournaments-wrapper': vm.refereeTournaments.length <= 3,
              'tournaments-wrapper-full': vm.refereeTournaments.length > 3}" ng-hide="vm.refereeTournaments.length == 0">
-                <div class="text-left tournament" ng-repeat="tournament in vm.refereeTournaments">
+                <div ng-click='vm.goToTournament(tournament)' class="text-left tournament" ng-repeat="tournament in vm.refereeTournaments">
                     <div class="tournament-top-section">
                         <div class="tournament-title">{{tournament.name}}</div>
                         <i class="glyphicon glyphicon-plane"></i>
@@ -83,7 +83,7 @@
 
             <div ng-class="{'tournaments-wrapper': vm.participantTournaments.length <= 3,
              'tournaments-wrapper-full': vm.participantTournaments.length > 3}" ng-hide="vm.participantTournaments.length == 0">
-                <div class="text-left tournament" ng-repeat="tournament in vm.participantTournaments">
+                <div ng-click='vm.goToTournament(tournament)' class="text-left tournament" ng-repeat="tournament in vm.participantTournaments">
                     <div class="tournament-top-section">
                         <div class="tournament-title">{{tournament.name}}</div>
                         <i class="glyphicon glyphicon-plane"></i>

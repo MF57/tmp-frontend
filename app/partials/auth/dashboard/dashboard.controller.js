@@ -22,7 +22,7 @@
         }
 
         function goToTournament(tournament) {
-            alert(tournament.tournamentId)
+            $state.go('Tournament', {'tournamentId' : tournament.tournamentId})
         }
 
         vm.loadAll();
