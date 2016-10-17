@@ -18,7 +18,7 @@
         this.coreApi = core + api;
         this.statsApi = stats + api;
         this.authlogApi = authlog + api;
-        this.appId="57d313d019388513cf91d701";
+        this.appId="57e7f07946e0fb000155789f";
         return this;
     }
 
