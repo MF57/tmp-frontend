@@ -1,0 +1,9 @@
+@import "variables";
+@import "components";
+
+.enroll-me-header {
+  letter-spacing: $letterSpacing;
+  color: $color-white;
+  font-size: 5vh;
+  margin-bottom: 5vh;
+}

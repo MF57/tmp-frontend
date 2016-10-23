@@ -16,7 +16,22 @@
         };
 
         function loadAll(username) {
-            return ["Tournament1", "Tournament2"];
+            return [
+                {
+                    tournamentId: "507c7f79bcf86cd7994f6c0e",
+                    name: "Tournament 1",
+                    beginDate: "2016-12-19 19:00",
+                    level: "UBERS",
+                    status: "ENROLLMENT"
+                },
+                {
+                    tournamentId: "507c7f79bcf86cd7994f6c1e",
+                    name: "Tournament 2",
+                    beginDate: "2016-05-20 21:00",
+                    level: "OVERLY USED",
+                    status: "ENROLLMENT"
+                }
+            ];
         }
 
 

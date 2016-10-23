@@ -1,4 +1,28 @@
-<p>Enroll Me</p>
-<ul>
-    <li ng-repeat="tournament in vm.tournaments">{{tournament}}</li>
-</ul>
+<div class="enroll-me-header">ENROLL FOR TOURNAMENTS</div>
+<div ng-show="vm.tournaments.length === 0">NIE MA TOURNAMENTÓW</div>
+<div class="row text-center" ng-show="vm.tournaments.length > 0">
+    <div class="col-md-12">
+        <div class="tournaments-wrapper-full">
+            <div ng-click='' class="text-left tournament" ng-repeat="tournament in vm.tournaments">
+                <div class="tournament-top-section">
+                    <div class="tournament-title">{{tournament.name}}</div>
+                    <div class="discipline-icon volleyball-icon"></div>
+                </div>
+                <div class="tournament-bottom-section">
+                    <div class="tournament-info-section tournament-status">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        {{tournament.status}}
+                    </div>
+                    <div class="tournament-info-section tournament-date">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        {{tournament.beginDate}}
+                    </div>
+                    <div class="tournament-info-section tournament-level">
+                        <i class="glyphicon glyphicon-flash"></i>
+                        {{tournament.level}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
