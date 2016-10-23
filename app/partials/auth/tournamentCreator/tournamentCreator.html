@@ -12,10 +12,14 @@
             </li>
             <li ng-click="vm.scrollTo(3)">
                 <div class="title">3</div>
-                <div class="subtitle">Data</div>
+                <div class="subtitle">Place</div>
             </li>
             <li ng-click="vm.scrollTo(4)">
                 <div class="title">4</div>
+                <div class="subtitle">Data</div>
+            </li>
+            <li ng-click="vm.scrollTo(5)">
+                <div class="title">5</div>
                 <div class="subtitle">Summary</div>
             </li>
         </div>
@@ -27,11 +31,11 @@
             <div class="input-group">
                 <div class="input-with-label">
                     <label for="tournament-name">Tournament name</label>
-                    <input type="text" id="tournament-name">
+                    <input ng-model="vm.tournament.name" type="text" id="tournament-name">
                 </div>
                 <div class="input-with-label">
                     <label for="tournament-description">Tournament description</label>
-                    <textarea id="tournament-description"></textarea>
+                    <textarea ng-model="vm.tournament.description" id="tournament-description"></textarea>
                 </div>
             </div>
         </li>
@@ -39,7 +43,7 @@
             <div class="input-group">
                 <div class="input-with-label">
                     <label for="tournament-discipline">Tournament discipline</label>
-                    <select id="tournament-discipline">
+                    <select ng-model="vm.tournament.sport" id="tournament-discipline">
                         <option>Volleyball</option>
                         <option>Beach Volleyball</option>
                         <option>Soccer</option>
@@ -48,12 +52,23 @@
                 </div>
                 <div class="input-with-label">
                     <label for="tournament-strategy">Tournament strategy</label>
-                    <select id="tournament-strategy">
+                    <select ng-model="vm.tournament.strategy" id="tournament-strategy">
                         <option>Single elimination</option>
                         <option>Double elimination</option>
                         <option>Round robin</option>
                         <option>League</option>
                     </select>
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-capacity">Tournament capacity</label>
+                    <input ng-model="vm.tournament.capacity" id="tournament-capacity">
+            </div>
+        </li>
+        <li>
+            <div class="input-group">
+                <div class="input-with-label">
+                    <label for="tournament-place">Tournament place</label>
+                    <input ng-model="vm.tournament.place" id="tournament-place">
                 </div>
             </div>
         </li>
@@ -61,23 +76,41 @@
             <div class="input-group">
                 <div class="input-with-label">
                     <label for="tournament-start-date">Start date</label>
-                    <input type="date" id="tournament-start-date">
+                    <input ng-model="vm.startDate" type="date" id="tournament-start-date">
                 </div>
                 <div class="input-with-label">
                     <label for="tournament-start-time">Start time</label>
-                    <input type="time" id="tournament-start-time">
+                    <input ng-model="vm.startTime" type="time" id="tournament-start-time">
                 </div>
                 <div class="input-with-label">
                     <label for="tournament-end-date">End date</label>
-                    <input type="date" id="tournament-end-date">
+                    <input ng-model="vm.endDate" type="date" id="tournament-end-date">
                 </div>
                 <div class="input-with-label">
                     <label for="tournament-end-time">End time</label>
-                    <input type="time" id="tournament-end-time">
+                    <input ng-model="vm.endTime" type="time" id="tournament-end-time">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-backup-start-date">Backup start date</label>
+                    <input ng-model="vm.backupStartDate" type="date" id="tournament-backup-start-date">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-backup-start-time">Backup start time</label>
+                    <input ng-model="vm.backupStartTime" type="time" id="tournament-backup-start-time">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-backup-end-date">Backup end date</label>
+                    <input ng-model="vm.backupEndDate" type="date" id="tournament-backup-end-date">
+                </div>
+                <div class="input-with-label">
+                    <label for="tournament-backup-end-time">Backup end time</label>
+                    <input ng-model="vm.backupEndTime" type="time" id="tournament-backup-end-time">
                 </div>
             </div>
         </li>
-        <li>Summary</li>
+        <li>
+            <button ng-click="vm.createTournament()">Create tournament!!11</button>
+        </li>
     </ul>
 
 </div>
