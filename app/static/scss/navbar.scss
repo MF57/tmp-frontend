@@ -44,6 +44,7 @@
     margin-left: 10%;
     border-bottom: 2px solid $color-studio;
     text-align: center;
+    cursor: pointer;
     a {
       padding-right: 0;
       padding-left: 0;
@@ -60,10 +61,13 @@
     left: 0;
     margin-bottom: 20px;
   }
-  .nav > li:hover, .nav > li:focus, .nav > li.active {
+  .nav > li:hover, li.active {
     background-color: rgba(255, 255, 255, 0.3);
     border-bottom: 2px solid $color-white;
   }
+
+
+
   .user-profile {
     text-align: center;
     cursor: pointer;
@@ -103,6 +107,7 @@
   .nav > li {
     width: 100%;
     margin-left: 0;
+    cursor: pointer;
   }
   width: $collapsedNavbarWidth;
   .user-profile {
@@ -140,9 +145,6 @@
     overflow-x: hidden;
   }
 
-  .workspace-border {
-    border: $workspaceBorder solid $color-white;
-  }
 }
 
 .main.collapsed-main {
@@ -154,3 +156,4 @@
   width: calc(100vw - #{$collapsedNavbarWidth});
   margin-left: $collapsedNavbarWidth;
 }
+

@@ -12,11 +12,10 @@
         var vm = this;
         
         vm.picture = {};
-        vm.refreshUserData = refreshUserData;
+        vm.loadAll = loadAll;
         vm.saveChanges = saveChanges;
         vm.uploadPicture = uploadPicture;
-
-        refreshUserData();
+        vm.loadAll = loadAll;
 
         $scope.$watch(function () {
             return vm.picture;
@@ -58,7 +57,7 @@
 
         }
         
-        function refreshUserData() {
+        function loadAll() {
             UserService.getUser(TokenStorage.decode(TokenStorage.retrieve()).username)
                 .$promise.then(successCallback, failueCallback);
             function successCallback(result) {
@@ -68,6 +67,8 @@
                 console.log("Can't get user data.")
             }
         }
+
+        vm.loadAll();
 
 
     }
