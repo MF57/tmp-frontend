@@ -7,3 +7,19 @@
   font-size: 5vh;
   margin-bottom: 5vh;
 }
+
+.no-tournaments-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh;
+  letter-spacing: $letterSpacing;
+  color: $color-jacarta;
+  font-size: 4vh;
+  text-align: center;
+  .encouragement {
+    width: 40vh;
+  }
+}
+

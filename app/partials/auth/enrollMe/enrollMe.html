@@ -1,6 +1,16 @@
-<div class="enroll-me-header">ENROLL FOR TOURNAMENTS</div>
-<div ng-show="vm.tournaments.length === 0">NIE MA TOURNAMENTÓW</div>
+<div ng-show="vm.tournaments.length === 0">
+    <div class="no-tournaments-message">
+        <p>THERE ARE NO TOURNAMENTS THAT YOU CAN ENROLL TO</p>
+        <div class="no-tournaments">
+            <div ui-sref="TournamentCreator" class="encouragement">
+                <div><i class="icon glyphicon glyphicon-plus"></i></div>
+                <div>CREATE YOUR OWN TOURNAMENT</div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row text-center" ng-show="vm.tournaments.length > 0">
+    <div class="enroll-me-header">ENROLL FOR TOURNAMENTS</div>
     <div class="col-md-12">
         <div class="tournaments-wrapper-full">
             <div ng-click='' class="text-left tournament" ng-repeat="tournament in vm.tournaments">
