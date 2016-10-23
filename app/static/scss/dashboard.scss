@@ -76,6 +76,17 @@
         margin-left: 1vw;
         width: 85%;
       }
+
+      .discipline-icon {
+        width: 4vh;
+        height: 4vh;
+        margin-right: 20px;
+      }
+
+      .volleyball-icon {
+        background-image: url("../images/volleyball-icon.png") ;
+        background-size: cover;
+      }
     }
 
     .tournament-bottom-section {
@@ -114,5 +125,4 @@
   height: 85vh;
   overflow-y: scroll;
   overflow-x: hidden;
-
 }
