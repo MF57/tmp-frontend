@@ -13,7 +13,7 @@
     <div class="enroll-me-header">ENROLL FOR TOURNAMENTS</div>
     <div class="col-md-12">
         <div class="tournaments-wrapper-full">
-            <div ng-click='' class="text-left tournament" ng-repeat="tournament in vm.tournaments">
+            <div ng-click='vm.showEnrollmentPopup(tournament)' class="text-left tournament" ng-repeat="tournament in vm.tournaments">
                 <div class="tournament-top-section">
                     <div class="tournament-title">{{tournament.name}}</div>
                     <div class="discipline-icon volleyball-icon"></div>

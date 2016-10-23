@@ -26,7 +26,6 @@
 
             function successCallback(result) {
                 vm.userData = result;
-                console.log(vm.userData);
                 vm.userPictureUrl = vm.userData.pictureURL;
             }
 
