@@ -1,0 +1,28 @@
+(function () {
+    'use strict';
+    angular
+        .module('myApp')
+        .factory('TournamentCreator', TournamentCreatorService);
+
+
+    TournamentCreatorService.$inject = ['ApiUrls', '$resource'];
+    function TournamentCreatorService(ApiUrls, $resource) {
+        var service = {
+            create: create
+        };
+
+        function create(tournament) {
+            console.log(JSON.stringify(tournament));
+            return $resource(`${ApiUrls.enrollmentApi}tournaments`, {}, {
+                'query': {
+                    method: 'POST'
+                }
+            }).query(tournament);
+        }
+
+        return service;
+
+    }
+
+
+})();
