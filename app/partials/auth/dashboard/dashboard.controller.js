@@ -4,7 +4,7 @@
         .module('myApp')
         .controller('DashboardCtrl', DashboardController);
 
-    DashboardController.$inject = ['Dashboard', '$state'];
+    DashboardController.$inject = ['Dashboard', '$state', 'TokenStorage'];
     function DashboardController(Dashboard, $state) {
         var vm = this;
         vm.ownerTournaments = [];
@@ -15,10 +15,18 @@
 
 
         function loadAll() {
-            var data = Dashboard.loadAll();
-            vm.ownerTournaments = data.ownerTournaments;
-            vm.refereeTournaments = data.refereeTournaments;
-            vm.participantTournaments = data.participantTournaments;
+            Dashboard.loadAll().$promise.then(successCallback, failureCallback);
+
+
+            function successCallback(data) {
+                vm.ownerTournaments = data.ownerTournaments;
+                vm.refereeTournaments = [];
+                vm.participantTournaments = [];
+            }
+
+            function failureCallback(error) {
+                console.log("BLAD PRZY WYCIAGANIU TURNIEJOW")
+            }
         }
 
         function goToTournament(tournament) {
