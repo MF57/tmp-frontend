@@ -4,19 +4,17 @@
         .module('myApp')
         .controller('EnrollMeCtrl', EnrollMeController);
 
-    EnrollMeController.$inject = ['$http', 'ApiUrls'];
-    function EnrollMeController($http, ApiUrls) {
+    EnrollMeController.$inject = ['EnrollMe', 'TokenStorage'];
+    function EnrollMeController(EnrollMe, TokenStorage) {
         var vm = this;
-        vm.message = "";
-        vm.refresh = refresh;
+        vm.tournaments = [];
+        vm.loadAll = loadAll;
 
-        function refresh() {
-            $http.get(ApiUrls.statsApi + "tests").success(function (response) {
-                vm.message = response;
-            }).error(function () {
-                vm.message = "Could not connect to TMP-Stats"
-            });
+        function loadAll() {
+            vm.tournaments = EnrollMe.loadAll(TokenStorage.decode(TokenStorage.retrieve()).username)
         }
+
+        vm.loadAll();
     }
 
 })();
