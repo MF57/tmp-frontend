@@ -14,10 +14,10 @@
         function create(tournament) {
             console.log(JSON.stringify(tournament));
             return $resource(`${ApiUrls.enrollmentApi}tournaments`, {}, {
-                'query': {
+                'save': {
                     method: 'POST'
                 }
-            }).query(tournament);
+            }).save(tournament);
         }
 
         return service;

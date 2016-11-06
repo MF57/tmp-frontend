@@ -19,9 +19,9 @@
 
 
             function successCallback(data) {
-                vm.ownerTournaments = data.ownerTournaments;
+                vm.ownerTournaments = data.organizedTournaments;
                 vm.refereeTournaments = [];
-                vm.participantTournaments = [];
+                vm.participantTournaments = data.participatingTournaments;
             }
 
             function failureCallback(error) {
