@@ -8,6 +8,7 @@
     function TournamentCreatorController($http, ApiUrls, TournamentCreator) {
         var vm = this;
         vm.tournament = {};
+        vm.capacity = 0;
         vm.scrollTo = scrollTo;
         vm.createTournament = createTournament;
         vm.concatenateDateAndTime = concatenateDateAndTime;
@@ -29,6 +30,10 @@
             vm.tournament.endTime = vm.concatenateDateAndTime(vm.endDate, vm.endTime);
             vm.tournament.backupStartTime = vm.concatenateDateAndTime(vm.backupStartDate, vm.backupEndTime);
             vm.tournament.backupEndTime = vm.concatenateDateAndTime(vm.backupEndDate, vm.backupEndTime);
+            vm.tournament.capacity = {};
+            vm.tournament.capacity.type = 'PLAYER';
+            vm.tournament.capacity.participantCount = vm.capacity;
+            vm.tournament.capacity.participantArity = 1;
             TournamentCreator.create(vm.tournament)
                 .$promise.then(successCallback, failureCallback);
 
