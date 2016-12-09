@@ -13,7 +13,7 @@
 
         function create(tournament) {
             console.log(JSON.stringify(tournament));
-            return $resource(`${ApiUrls.enrollmentApi}tournaments/`, {}, {
+            return $resource(`${ApiUrls.enrollmentApi}tournaments`, {}, {
                 'save': {
                     method: 'POST'
                 }
