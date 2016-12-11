@@ -19,15 +19,15 @@
                     <div class="tournament-bottom-section">
                         <div class="tournament-info-section tournament-status">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                            {{tournament.status}}
+                            {{tournament.state === null ? "CREATED" : tournament.state}}
                         </div>
                         <div class="tournament-info-section tournament-date">
                             <i class="glyphicon glyphicon-calendar"></i>
-                            {{tournament.beginDate}}
+                            {{tournament.startTime.substring(0, tournament.startTime.indexOf("T"))}}
                         </div>
                         <div class="tournament-info-section tournament-level">
-                            <i class="glyphicon glyphicon-flash"></i>
-                            {{tournament.level}}
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            {{tournament.place}}
                         </div>
                     </div>
                 </div>
@@ -55,15 +55,15 @@
                     <div class="tournament-bottom-section">
                         <div class="tournament-info-section tournament-status">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                            {{tournament.status}}
+                            {{tournament.state === null ? "CREATED" : tournament.state}}
                         </div>
                         <div class="tournament-info-section tournament-date">
                             <i class="glyphicon glyphicon-calendar"></i>
-                            {{tournament.beginDate}}
+                            {{tournament.startTime.substring(0, tournament.startTime.indexOf("T"))}}
                         </div>
                         <div class="tournament-info-section tournament-level">
-                            <i class="glyphicon glyphicon-flash"></i>
-                            {{tournament.level}}
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            {{tournament.place}}
                         </div>
                     </div>
                 </div>
@@ -91,15 +91,15 @@
                     <div class="tournament-bottom-section">
                         <div class="tournament-info-section tournament-status">
                             <i class="glyphicon glyphicon-info-sign"></i>
-                            {{tournament.status}}
+                            {{tournament.state === null ? "CREATED" : tournament.state}}
                         </div>
                         <div class="tournament-info-section tournament-date">
                             <i class="glyphicon glyphicon-calendar"></i>
-                            {{tournament.beginDate}}
+                            {{tournament.startTime.substring(0, tournament.startTime.indexOf("T"))}}
                         </div>
                         <div class="tournament-info-section tournament-level">
-                            <i class="glyphicon glyphicon-flash"></i>
-                            {{tournament.level}}
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                            {{tournament.place}}
                         </div>
                     </div>
                 </div>

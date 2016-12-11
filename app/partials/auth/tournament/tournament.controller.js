@@ -15,6 +15,7 @@
         function loadAll() {
             vm.tournament = Tournament
                 .loadAll($stateParams.tournamentId, TokenStorage.decode(TokenStorage.retrieve()).username);
+            console.log(vm.tournament);
         }
 
         loadAll();
