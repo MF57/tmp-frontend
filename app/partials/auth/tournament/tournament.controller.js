@@ -28,7 +28,16 @@
         }
 
         function changeTournamentState() {
+            vm.tournament.state = "ENROLLMENT_OPEN";
+            Tournament.update(vm.tournament).$promise.then(successCallback, failureCallback);
 
+            function successCallback(data) {
+                console.log("OTWARTO ZAPISY")
+            }
+
+            function failureCallback(error) {
+                alert("BLAD PRZY EDYCJI TURNIEJU")
+            }
         }
 
         function loadAll() {

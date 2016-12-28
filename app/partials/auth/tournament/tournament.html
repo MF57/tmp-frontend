@@ -1,6 +1,6 @@
 <div class="container">
     <h1>TOURNAMENT CENTER</h1>
     <h2>TournamentId - {{vm.tournament.id}}</h2>
-    <button ng-click="vm.changeTournamentState()" class="btn btn-primary">START ENROLLMENT</button>
+    <button ng-show="vm.tournament.state !== 'ENROLLMENT_OPEN'" ng-click="vm.changeTournamentState()" class="btn btn-primary">START ENROLLMENT</button>
     <button ng-click="vm.deleteTournament()" class="btn btn-primary">DELETE TOURNAMENT</button>
 </div>

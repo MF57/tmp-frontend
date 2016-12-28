@@ -13,6 +13,7 @@
         var resourceUrl = ApiUrls.enrollmentApi + "tournaments/";
         var service = {
             loadAll: loadAll,
+            update: update,
             remove: remove
 
         };
@@ -21,6 +22,12 @@
             return $resource(resourceUrl + tournamentId, {}, {
                 'query': { method: 'GET'}
             }).query();
+        }
+
+        function update(tournament) {
+            return $resource(resourceUrl + tournament.id, {}, {
+                'update': { method: 'PUT'}
+            }).update(tournament);
         }
 
         function remove(tournamentId) {

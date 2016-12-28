@@ -10,7 +10,7 @@
 
     EnrollMeService.$inject = ['ApiUrls', '$resource'];
     function EnrollMeService(ApiUrls, $resource) {
-        var resourceUrl = ApiUrls.enrollmentApi + "/tournaments";
+        var resourceUrl = ApiUrls.enrollmentApi + "tournaments";
         var service = {
             loadAll: loadAll
         };
