@@ -10,36 +10,26 @@
 
     TournamentService.$inject = ['ApiUrls', '$resource'];
     function TournamentService(ApiUrls, $resource) {
-        var resourceUrl = ApiUrls.enrollmentApi + "";
+        var resourceUrl = ApiUrls.enrollmentApi + "tournaments/";
         var service = {
-            loadAll: loadAll
+            loadAll: loadAll,
+            remove: remove
+
         };
 
         function loadAll(tournamentId, username) {
-            var role = checkUserPrivilages(tournamentId, username);
-            var tournament = {
-                tournamentId: tournamentId,
-                name: "ChampionsLeague",
-                status: "ENROLLMENT",
-                level: "UBERS",
-                discipline: "volleyball",
-                beginDate: "2015-12-10 18:00",
-                endDate: "2015-12-11 18:00",
-                userRole: role
-            };
-
-            if (role === "OWNER") {
-                tournament.maxParticipants = 16;
-                tournament.participants = ["Real Madrid", "FC Barcelona", "Arsenal Londyn"];
-
-            }
-
-            return tournament;
+            return $resource(resourceUrl + tournamentId, {}, {
+                'query': { method: 'GET'}
+            }).query();
         }
 
-        function checkUserPrivilages(tournamentId, username) {
-            return Math.random() >= 0.5 ? "OWNER" : "PARTICIPANT";
+        function remove(tournamentId) {
+            return $resource(resourceUrl + tournamentId, {}, {
+                'delete': { method: 'DELETE'}
+            }).delete();
         }
+
+
 
         return service;
 

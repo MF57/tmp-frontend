@@ -7,15 +7,42 @@
         .module('myApp')
         .controller('TournamentCtrl', TournamentController);
 
-    TournamentController.$inject = ['$stateParams', 'TokenStorage', 'Tournament'];
-    function TournamentController($stateParams, TokenStorage, Tournament) {
+    TournamentController.$inject = ['$stateParams', '$state', 'TokenStorage', 'Tournament'];
+    function TournamentController($stateParams, $state, TokenStorage, Tournament) {
         var vm = this;
         vm.tournament = {};
+        vm.deleteTournament = deleteTournament;
+        vm.changeTournamentState = changeTournamentState;
+
+
+        function deleteTournament() {
+            Tournament.remove(vm.tournament.id).$promise.then(successCallback, failureCallback);
+
+            function successCallback(data) {
+                $state.go('Dashboard')
+            }
+
+            function failureCallback(error) {
+                alert("BLAD PRZY USUWANIU TURNIEJU")
+            }
+        }
+
+        function changeTournamentState() {
+
+        }
 
         function loadAll() {
-            vm.tournament = Tournament
-                .loadAll($stateParams.tournamentId, TokenStorage.decode(TokenStorage.retrieve()).username);
-            console.log(vm.tournament);
+            Tournament.loadAll($stateParams.tournamentId, TokenStorage.decode(TokenStorage.retrieve()).username)
+                .$promise.then(successCallback, failureCallback);
+
+
+            function successCallback(data) {
+                vm.tournament = data;
+            }
+
+            function failureCallback(error) {
+                console.log("BLAD PRZY WYCIAGANIU TURNIEJU")
+            }
         }
 
         loadAll();

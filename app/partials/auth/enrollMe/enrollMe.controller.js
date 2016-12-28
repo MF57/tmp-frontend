@@ -34,7 +34,17 @@
         }
 
         function loadAll() {
-            vm.tournaments = EnrollMe.loadAll(vm.username)
+            EnrollMe.loadAll()
+                .$promise.then(successCallback, failureCallback);
+
+
+            function successCallback(data) {
+                vm.tournaments = data;
+            }
+
+            function failureCallback(error) {
+                console.log("BLAD PRZY WYCIAGANIU TURNIEJU")
+            }
         }
 
         vm.loadAll();

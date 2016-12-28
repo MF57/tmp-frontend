@@ -10,70 +10,15 @@
 
     EnrollMeService.$inject = ['ApiUrls', '$resource'];
     function EnrollMeService(ApiUrls, $resource) {
-        var resourceUrl = ApiUrls.enrollmentApi + "";
+        var resourceUrl = ApiUrls.enrollmentApi + "/tournaments";
         var service = {
             loadAll: loadAll
         };
 
-        function loadAll(username) {
-            return [
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c0e",
-                    name: "Tournament 1",
-                    beginDate: "2016-12-19 19:00",
-                    level: "UBERS",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c1e",
-                    name: "Tournament 2",
-                    beginDate: "2016-05-20 21:00",
-                    level: "OVERLY USED",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c0e",
-                    name: "Tournament 3",
-                    beginDate: "2016-12-19 19:00",
-                    level: "UBERS",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c1e",
-                    name: "Tournament 4",
-                    beginDate: "2016-05-20 21:00",
-                    level: "OVERLY USED",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c0e",
-                    name: "Tournament 5",
-                    beginDate: "2016-12-19 19:00",
-                    level: "UBERS",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c1e",
-                    name: "Tournament 6",
-                    beginDate: "2016-05-20 21:00",
-                    level: "OVERLY USED",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c0e",
-                    name: "Tournament 7",
-                    beginDate: "2016-12-19 19:00",
-                    level: "UBERS",
-                    status: "ENROLLMENT"
-                },
-                {
-                    tournamentId: "507c7f79bcf86cd7994f6c1e",
-                    name: "Tournament 8",
-                    beginDate: "2016-05-20 21:00",
-                    level: "OVERLY USED",
-                    status: "ENROLLMENT"
-                }
-            ];
+        function loadAll() {
+            return $resource(resourceUrl + "/enrollable", {}, {
+                'query': { method: 'GET'}
+            }).query();
         }
 
 
