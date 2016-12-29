@@ -17,7 +17,10 @@
 
         function loadAll() {
             return $resource(resourceUrl + "/enrollable", {}, {
-                'query': { method: 'GET'}
+                'query': {
+                    method: 'GET',
+                    isArray: true
+                }
             }).query();
         }
 
