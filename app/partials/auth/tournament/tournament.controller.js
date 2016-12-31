@@ -9,7 +9,7 @@
 
     TournamentController.$inject = ['$stateParams', '$state', 'TokenStorage', 'Tournament'];
     function TournamentController($stateParams, $state, TokenStorage, Tournament) {
-        var vm = this;
+        const vm = this;
         vm.tournament = {};
         vm.deleteTournament = deleteTournament;
         vm.changeTournamentState = changeTournamentState;
@@ -27,8 +27,8 @@
             }
         }
 
-        function changeTournamentState() {
-            vm.tournament.state = "ENROLLMENT_OPEN";
+        function changeTournamentState(newState) {
+            vm.tournament.state = newState;
             Tournament.update(vm.tournament).$promise.then(successCallback, failureCallback);
 
             function successCallback(data) {

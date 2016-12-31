@@ -9,7 +9,7 @@
 
     ApiUrls.$inject = [];
     function ApiUrls() {
-        const enrollment = "http://tmp-enrollment.tegess.com:8093/";
+        const enrollment = "http://tmp-core.tegess.com:8093/";
         const core = "http://tmp-core.tegess.com:8092/";
         const stats = "http://tmp-stats.tegess.com:8094/";
         const authlog = "http://tmp-authlog.tegess.com:8090/";
