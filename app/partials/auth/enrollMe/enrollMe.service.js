@@ -12,7 +12,8 @@
     function EnrollMeService(ApiUrls, $resource) {
         var resourceUrl = ApiUrls.enrollmentApi + "tournaments";
         var service = {
-            loadAll: loadAll
+            loadAll: loadAll,
+            enroll: enroll
         };
 
         function loadAll() {
@@ -22,6 +23,12 @@
                     isArray: true
                 }
             }).query();
+        }
+
+        function enroll(tournamentId) {
+            return $resource(resourceUrl + "/" + tournamentId + "/enroll", {}, {
+                'update': { method: 'PUT'}
+            }).update();
         }
 
 

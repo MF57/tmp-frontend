@@ -4,9 +4,9 @@
         .module('myApp')
         .controller('EnrollMeCtrl', EnrollMeController);
 
-    EnrollMeController.$inject = ['EnrollMe', 'TokenStorage', 'ngDialog', '$state'];
+    EnrollMeController.$inject = ['EnrollMe',  'TokenStorage', 'ngDialog', '$state'];
     function EnrollMeController(EnrollMe, TokenStorage, ngDialog, $state) {
-        var vm = this;
+        const vm = this;
         vm.tournaments = [];
         vm.selectedTournament = {};
         vm.username = TokenStorage.decode(TokenStorage.retrieve()).username;
@@ -16,7 +16,7 @@
 
         function showEnrollmentPopup(tournament) {
             vm.selectedTournament = tournament;
-            var dialog = ngDialog.open({
+            const dialog = ngDialog.open({
                 controller: "EnrollMePopupCtrl",
                 controllerAs: "vm",
                 template: "partials/auth/enrollMe/enrollMePopup.html",
@@ -28,7 +28,16 @@
             });
             dialog.closePromise.then((result) => {
                 if(result.value === true) {
-                    $state.go('Tournament', {'tournamentId' : vm.selectedTournament.tournamentId})
+                    vm.selectedTournament.enrollment.enrolledParticipantIds.push(vm.username);
+                    EnrollMe.enroll(vm.selectedTournament.id).$promise.then(successCallback, failureCallback);
+                }
+
+                function successCallback(data) {
+                    $state.go('Tournament', {'tournamentId' : vm.selectedTournament.id})
+                }
+
+                function failureCallback(error) {
+                    alert("BLAD PRZY EDYCJI TURNIEJU")
                 }
             })
         }
@@ -42,7 +51,7 @@
                 vm.tournaments = data;
             }
 
-            function failureCallback(error) {
+            function failureCallback() {
                 console.log("BLAD PRZY WYCIAGANIU TURNIEJU")
             }
         }
